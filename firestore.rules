@@ -1,0 +1,130 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+    
+    function isValidReferralStatus() {
+      return request.resource.data.status in [
+        'not_contacted',
+        'message_sent',
+        'waiting_response',
+        'employee_agreed',
+        'details_requested',
+        'referral_submitted',
+        'rejected',
+        'successful',
+        'closed'
+      ];
+    }
+    
+    function isValidTaskStatus() {
+      return request.resource.data.status in [
+        'pending',
+        'completed',
+        'snoozed',
+        'cancelled'
+      ];
+    }
+    
+    function isValidConversationDirection() {
+      return request.resource.data.direction in ['sent', 'received'];
+    }
+    
+    // Users collection
+    match /users/{userId} {
+      // Users can read/write their own user document
+      allow read, write: if isOwner(userId);
+      
+      // Referrals subcollection
+      match /referrals/{referralId} {
+        // Users can only access their own referrals
+        allow read: if isOwner(userId);
+        
+        allow create: if isOwner(userId)
+          && request.resource.data.keys().hasAll(['companyName', 'jobTitle', 'employeeName', 'status'])
+          && isValidReferralStatus()
+          && request.resource.data.userId == userId;
+        
+        allow update: if isOwner(userId)
+          && resource.data.userId == userId
+          && (request.resource.data.status == resource.data.status || isValidReferralStatus());
+        
+        allow delete: if isOwner(userId)
+          && resource.data.userId == userId;
+        
+        // Conversations subcollection (nested under referrals)
+        match /conversations/{conversationId} {
+          // Users can only access conversations for their own referrals
+          allow read: if isOwner(userId);
+          
+          allow create: if isOwner(userId)
+            && request.resource.data.keys().hasAll(['message', 'direction'])
+            && isValidConversationDirection()
+            && request.resource.data.referralId == referralId;
+          
+          allow update: if isOwner(userId)
+            && resource.data.referralId == referralId
+            && (request.resource.data.direction == resource.data.direction || isValidConversationDirection());
+          
+          allow delete: if isOwner(userId)
+            && resource.data.referralId == referralId;
+        }
+      }
+      
+      // Tasks subcollection
+      match /tasks/{taskId} {
+        // Users can only access their own tasks
+        allow read: if isOwner(userId);
+        
+        allow create: if isOwner(userId)
+          && request.resource.data.keys().hasAll(['title', 'referralId', 'status'])
+          && isValidTaskStatus()
+          && request.resource.data.userId == userId;
+        
+        allow update: if isOwner(userId)
+          && resource.data.userId == userId
+          && (request.resource.data.status == resource.data.status || isValidTaskStatus());
+        
+        allow delete: if isOwner(userId)
+          && resource.data.userId == userId;
+      }
+      
+      // Reminders subcollection
+      match /reminders/{reminderId} {
+        // Users can only access their own reminders
+        allow read: if isOwner(userId);
+        
+        allow create: if isOwner(userId)
+          && request.resource.data.keys().hasAll(['title', 'action', 'referralId', 'dueDate'])
+          && request.resource.data.action in [
+            'send_resume',
+            'send_job_details',
+            'follow_up',
+            'check_status',
+            'send_thank_you',
+            'update_resume',
+            'schedule_call',
+            'custom'
+          ];
+        
+        allow update: if isOwner(userId);
+        
+        allow delete: if isOwner(userId);
+      }
+    }
+    
+    // Deny all other access
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "referralsaathi-gemini-worker",
+  "version": "1.0.0",
+  "description": "Secure Gemini API proxy for ReferralSaathi with Firebase authentication",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "tail": "wrangler tail"
+  },
+  "keywords": [
+    "cloudflare-worker",
+    "gemini-api",
+    "firebase-auth",
+    "proxy"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "jose": "^5.2.0"
+  },
+  "devDependencies": {
+    "wrangler": "^3.28.0"
+  }
+}

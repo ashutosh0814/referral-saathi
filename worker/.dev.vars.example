@@ -1,0 +1,10 @@
+# Development Environment Variables
+# Copy this file to .dev.vars and fill in your actual values
+# NEVER commit .dev.vars to version control!
+
+# Google Gemini API Key
+# Get yours at: https://makersuite.google.com/app/apikey
+GEMINI_API_KEY=your-gemini-api-key-here
+
+# For production, set secrets using:
+# wrangler secret put GEMINI_API_KEY
