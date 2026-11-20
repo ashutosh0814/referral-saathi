@@ -105,7 +105,7 @@ function Sidebar({ isOpen, onClose }) {
       <aside
         data-sidebar
         className={`
-          fixed lg:relative top-0 left-0 z-40 h-screen lg:h-auto w-64 bg-white border-r border-gray-200
+          fixed lg:relative top-0 left-0 z-40 h-screen lg:h-auto w-64 bg-[#000000] border-r border-[#282828]
           transform transition-transform duration-200 ease-in-out shadow-xl lg:shadow-none
           lg:translate-x-0
           ${isOpen ? 'translate-x-0' : '-translate-x-full'}
@@ -115,9 +115,9 @@ function Sidebar({ isOpen, onClose }) {
       >
         <div className="flex flex-col h-full">
           {/* Logo + Close Button - Mobile only */}
-          <div className="flex items-center justify-between h-14 px-6 border-b border-gray-100 lg:hidden">
+          <div className="flex items-center justify-between h-14 px-6 border-b border-[#282828] lg:hidden">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 bg-gradient-to-br from-violet-600 to-violet-700 rounded-xl flex items-center justify-center shadow-sm">
+              <div className="w-9 h-9 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center shadow-sm">
                 <svg
                   className="w-5 h-5 text-white"
                   fill="none"
@@ -133,7 +133,7 @@ function Sidebar({ isOpen, onClose }) {
                   />
                 </svg>
               </div>
-              <span className="text-lg font-semibold text-gray-900 tracking-tight">
+              <span className="text-lg font-semibold text-white tracking-tight">
                 ReferralSaathi
               </span>
             </div>
@@ -141,7 +141,7 @@ function Sidebar({ isOpen, onClose }) {
             {/* Close button - Mobile only */}
             <button
               onClick={onClose}
-              className="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2"
+              className="p-2 text-gray-300 hover:text-white hover:bg-[#282828] rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-[#000000]"
               aria-label="Close sidebar"
             >
               <X className="w-5 h-5" />
@@ -149,9 +149,9 @@ function Sidebar({ isOpen, onClose }) {
           </div>
 
           {/* Logo - Desktop only */}
-          <div className="hidden lg:flex items-center h-14 px-6 border-b border-gray-100">
+          <div className="hidden lg:flex items-center h-14 px-6 border-b border-[#282828]">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 bg-gradient-to-br from-violet-600 to-violet-700 rounded-xl flex items-center justify-center shadow-sm">
+              <div className="w-9 h-9 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center shadow-sm">
                 <svg
                   className="w-5 h-5 text-white"
                   fill="none"
@@ -167,7 +167,7 @@ function Sidebar({ isOpen, onClose }) {
                   />
                 </svg>
               </div>
-              <span className="text-lg font-semibold text-gray-900 tracking-tight">
+              <span className="text-lg font-semibold text-white tracking-tight">
                 ReferralSaathi
               </span>
             </div>
@@ -206,17 +206,17 @@ function Sidebar({ isOpen, onClose }) {
           </nav>
 
           {/* Footer */}
-          <div className="p-4 border-t border-gray-100">
-            <div className="bg-gradient-to-br from-violet-50 to-violet-100 rounded-xl p-5 border border-violet-200/50">
-              <p className="text-sm font-semibold text-violet-900 mb-1.5 tracking-tight">
+          <div className="p-4 border-t border-[#282828]">
+            <div className="bg-gradient-to-br from-green-500/10 to-green-600/10 rounded-xl p-5 border border-green-500/20">
+              <p className="text-sm font-semibold text-white mb-1.5 tracking-tight">
                 Need Help?
               </p>
-              <p className="text-sm text-violet-700 mb-3 leading-relaxed">
+              <p className="text-sm text-gray-300 mb-3 leading-relaxed">
                 Check out our documentation and guides
               </p>
               <a
                 href="#"
-                className="text-sm font-semibold text-violet-600 hover:text-violet-700 transition-colors inline-flex items-center gap-1 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 rounded"
+                className="text-sm font-semibold text-green-500 hover:text-green-400 transition-colors inline-flex items-center gap-1 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-[#000000] rounded"
                 tabIndex={0}
               >
                 View Documentation →

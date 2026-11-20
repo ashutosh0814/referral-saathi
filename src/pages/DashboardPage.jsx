@@ -105,7 +105,7 @@ function DashboardPage() {
           <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-1 sm:mb-2">
             Dashboard
           </h1>
-          <p className="text-sm sm:text-base text-gray-400">
+          <p className="text-sm sm:text-base text-gray-200">
             Welcome back! Here's what needs your attention.
           </p>
         </div>
@@ -115,7 +115,7 @@ function DashboardPage() {
           <div className="bg-[#1a1a1a] border border-[#282828] rounded-xl p-3 sm:p-4 lg:p-5 shadow-sm hover:shadow-md hover:border-green-500/50 transition-all">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
               <div className="flex-1">
-                <p className="text-xs text-gray-400 mb-1">Active Referrals</p>
+                <p className="text-xs text-gray-300 mb-1">Active Referrals</p>
                 <p className="text-lg sm:text-xl lg:text-2xl font-bold text-white">
                   {isLoading ? '-' : activeReferrals}
                 </p>
@@ -127,7 +127,7 @@ function DashboardPage() {
           <div className="bg-[#1a1a1a] border border-[#282828] rounded-xl p-3 sm:p-4 lg:p-5 shadow-sm hover:shadow-md hover:border-green-500/50 transition-all">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
               <div className="flex-1">
-                <p className="text-xs text-gray-400 mb-1">Pending Replies</p>
+                <p className="text-xs text-gray-300 mb-1">Pending Replies</p>
                 <p className="text-lg sm:text-xl lg:text-2xl font-bold text-white">
                   {isLoading ? '-' : pendingConversations.length}
                 </p>
@@ -139,7 +139,7 @@ function DashboardPage() {
           <div className="bg-[#1a1a1a] border border-[#282828] rounded-xl p-3 sm:p-4 lg:p-5 shadow-sm hover:shadow-md hover:border-green-500/50 transition-all">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
               <div className="flex-1">
-                <p className="text-xs text-gray-400 mb-1">Due Today</p>
+                <p className="text-xs text-gray-300 mb-1">Due Today</p>
                 <p className="text-lg sm:text-xl lg:text-2xl font-bold text-white">
                   {isLoading ? '-' : reminderStats?.dueToday || 0}
                 </p>
@@ -151,7 +151,7 @@ function DashboardPage() {
           <div className="bg-[#1a1a1a] border border-[#282828] rounded-xl p-3 sm:p-4 lg:p-5 shadow-sm hover:shadow-md hover:border-red-500/50 transition-all">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
               <div className="flex-1">
-                <p className="text-xs text-gray-400 mb-1">Overdue</p>
+                <p className="text-xs text-gray-300 mb-1">Overdue</p>
                 <p className="text-lg sm:text-xl lg:text-2xl font-bold text-white">
                   {isLoading ? '-' : reminderStats?.overdue || 0}
                 </p>
@@ -166,7 +166,7 @@ function DashboardPage() {
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4">
             <div className="text-white">
               <h2 className="text-base sm:text-lg lg:text-xl font-semibold mb-1 sm:mb-2">Quick Actions</h2>
-              <p className="text-green-50 text-xs sm:text-sm">
+              <p className="text-green-100 text-xs sm:text-sm">
                 Jump right into your workflow
               </p>
             </div>
@@ -262,13 +262,13 @@ function DashboardPage() {
                     <h3 className="text-sm font-semibold text-gray-900 truncate mb-0.5">
                       {referral.companyName}
                     </h3>
-                    <p className="text-xs text-gray-600 truncate">
+                    <p className="text-xs text-gray-200 truncate">
                       Waiting for {referral.employeeName}
                     </p>
                   </div>
 
                   {referral.conversationCount > 0 && (
-                    <div className="text-xs text-gray-500 flex items-center gap-1 flex-shrink-0">
+                    <div className="text-xs text-gray-200 flex items-center gap-1 flex-shrink-0">
                       <MessageSquare className="w-3 h-3" />
                       {referral.conversationCount}
                     </div>
@@ -300,7 +300,7 @@ function DashboardPage() {
             <h3 className="text-lg font-semibold text-gray-900 mb-2">
               Ready to start tracking referrals?
             </h3>
-            <p className="text-sm sm:text-base text-gray-600 mb-6 max-w-md mx-auto">
+            <p className="text-sm sm:text-base text-gray-200 mb-6 max-w-md mx-auto">
               Add your first referral to get started with tracking conversations and reminders
             </p>
             <Button

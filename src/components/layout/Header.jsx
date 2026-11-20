@@ -96,7 +96,7 @@ function Header({ onMenuClick }) {
           {/* Mobile Menu Button */}
           <button
             onClick={onMenuClick}
-            className="lg:hidden p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2"
+            className="lg:hidden p-2 text-gray-300 hover:text-white hover:bg-[#282828] rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-[#000000]"
             aria-label="Open menu"
             aria-expanded="false"
           >
@@ -121,7 +121,7 @@ function Header({ onMenuClick }) {
                 />
               </svg>
             </div>
-            <span className="text-base sm:text-lg font-semibold text-gray-900 tracking-tight">
+            <span className="text-base sm:text-lg font-semibold text-white tracking-tight">
               ReferralSaathi
             </span>
           </div>
@@ -131,7 +131,7 @@ function Header({ onMenuClick }) {
         <div className="flex items-center gap-2 sm:gap-3">
           {/* Notifications */}
           <button
-            className="relative p-1.5 sm:p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2"
+            className="relative p-1.5 sm:p-2 text-gray-300 hover:text-white hover:bg-[#282828] rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-[#000000]"
             aria-label="Notifications"
           >
             <Bell className="w-4 h-4 sm:w-5 sm:h-5" />
@@ -144,16 +144,16 @@ function Header({ onMenuClick }) {
             <button
               ref={buttonRef}
               onClick={() => setShowUserMenu(!showUserMenu)}
-              className="flex items-center gap-2 sm:gap-3 p-1.5 sm:p-2 sm:pr-3 hover:bg-gray-50 rounded-lg transition-colors border border-transparent hover:border-gray-200 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2"
+              className="flex items-center gap-2 sm:gap-3 p-1.5 sm:p-2 sm:pr-3 hover:bg-[#282828] rounded-lg transition-colors border border-transparent hover:border-[#3e3e3e] focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-[#000000]"
               aria-label="User menu"
               aria-expanded={showUserMenu}
               aria-haspopup="true"
             >
               <div className="hidden md:block text-right">
-                <p className="text-xs sm:text-sm font-medium text-gray-900 tracking-tight">
+                <p className="text-xs sm:text-sm font-medium text-white tracking-tight">
                   {user?.displayName || 'Guest User'}
                 </p>
-                <p className="text-xs text-gray-500 truncate max-w-[150px]">
+                <p className="text-xs text-gray-300 truncate max-w-[150px]">
                   {user?.email || 'guest@example.com'}
                 </p>
               </div>
@@ -183,16 +183,16 @@ function Header({ onMenuClick }) {
                 {/* Menu */}
                 <div
                   ref={menuRef}
-                  className="absolute right-0 mt-2 w-52 sm:w-60 bg-white rounded-xl shadow-xl border border-gray-200 py-1 sm:py-1.5 z-20 animate-slide-in-down"
+                  className="absolute right-0 mt-2 w-52 sm:w-60 bg-[#1a1a1a] rounded-xl shadow-xl border border-[#282828] py-1 sm:py-1.5 z-20 animate-slide-in-down"
                   role="menu"
                   aria-orientation="vertical"
                 >
                   {/* User Info - Mobile only */}
-                  <div className="md:hidden px-3 sm:px-4 py-2 sm:py-3 border-b border-gray-100">
-                    <p className="text-xs sm:text-sm font-medium text-gray-900 break-words">
+                  <div className="md:hidden px-3 sm:px-4 py-2 sm:py-3 border-b border-[#282828]">
+                    <p className="text-xs sm:text-sm font-medium text-white break-words">
                       {user?.displayName || 'Guest User'}
                     </p>
-                    <p className="text-xs text-gray-500 mt-0.5 break-words">
+                    <p className="text-xs text-gray-300 mt-0.5 break-words">
                       {user?.email || 'guest@example.com'}
                     </p>
                   </div>
@@ -203,16 +203,16 @@ function Header({ onMenuClick }) {
                       navigate('/settings');
                       setShowUserMenu(false);
                     }}
-                    className="w-full flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm text-gray-700 hover:bg-gray-50 transition-colors font-medium text-left focus:outline-none focus:bg-gray-100"
+                    className="w-full flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm text-gray-200 hover:bg-[#282828] transition-colors font-medium text-left focus:outline-none focus:bg-[#282828]"
                     role="menuitem"
                   >
                     <SettingsIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4" aria-hidden="true" />
                     Settings
                   </button>
-                  <div className="my-0.5 sm:my-1 border-t border-gray-100" role="separator"></div>
+                  <div className="my-0.5 sm:my-1 border-t border-[#282828]" role="separator"></div>
                   <button
                     onClick={handleLogout}
-                    className="w-full flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm text-red-600 hover:bg-red-50 transition-colors font-medium text-left focus:outline-none focus:bg-red-100"
+                    className="w-full flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm text-red-400 hover:bg-red-500/10 transition-colors font-medium text-left focus:outline-none focus:bg-red-500/20"
                     role="menuitem"
                   >
                     <LogOut className="w-3.5 h-3.5 sm:w-4 sm:h-4" aria-hidden="true" />
