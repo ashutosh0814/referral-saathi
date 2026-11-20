@@ -136,17 +136,17 @@ function AuthPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#121212] flex items-center justify-center p-4 sm:p-6 overflow-hidden">
-      <div className="w-full max-w-md">
+    <div className="min-h-screen bg-[#121212] flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+      <div className="w-full max-w-md my-8">
         {/* Logo */}
-        <div className="text-center mb-8 sm:mb-10">
-          <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl shadow-lg shadow-green-500/20 mb-4 sm:mb-6">
-            <Sparkles className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
+        <div className="text-center mb-6 sm:mb-8">
+          <div className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl shadow-lg shadow-green-500/20 mb-3 sm:mb-4">
+            <Sparkles className="w-7 h-7 sm:w-8 sm:h-8 text-white" />
           </div>
-          <h1 className="text-3xl sm:text-4xl font-bold text-white mb-2 tracking-tight">
+          <h1 className="text-2xl sm:text-3xl font-bold text-white mb-2 tracking-tight">
             ReferralSaathi
           </h1>
-          <p className="text-sm sm:text-base text-gray-400 font-medium">
+          <p className="text-sm text-gray-400 font-medium">
             {mode === 'reset' 
               ? 'Reset your password' 
               : mode === 'register'
@@ -156,7 +156,7 @@ function AuthPage() {
         </div>
 
         {/* Auth Card */}
-        <div className="card p-6 sm:p-8 shadow-2xl border-[#282828]">
+        <div className="card p-5 sm:p-6 shadow-2xl border-[#282828]">
           {/* Error Message */}
           {error && (
             <div className="alert alert-error mb-6">
@@ -180,7 +180,7 @@ function AuthPage() {
               <Button
                 type="button"
                 variant="secondary"
-                className="w-full mb-6"
+                className="w-full mb-5"
                 leftIcon={<Chrome />}
                 onClick={handleGoogleSignIn}
                 disabled={isSubmitting}
@@ -188,7 +188,7 @@ function AuthPage() {
                 Continue with Google
               </Button>
 
-              <div className="relative my-6 sm:my-8">
+              <div className="relative my-5 sm:my-6">
                 <div className="absolute inset-0 flex items-center">
                   <div className="w-full border-t border-[#282828]"></div>
                 </div>
@@ -200,7 +200,7 @@ function AuthPage() {
           )}
 
           {/* Auth Form */}
-          <form onSubmit={handleSubmit} className="space-y-5">
+          <form onSubmit={handleSubmit} className="space-y-4">
             {/* Display Name (Register only) */}
             {mode === 'register' && (
               <div>
@@ -327,7 +327,7 @@ function AuthPage() {
           </form>
 
           {/* Mode Switch */}
-          <div className="mt-6 sm:mt-8 text-center">
+          <div className="mt-5 sm:mt-6 text-center">
             {mode === 'reset' ? (
               <p className="text-sm text-gray-400">
                 Remember your password?{' '}
@@ -363,7 +363,7 @@ function AuthPage() {
         </div>
 
         {/* Footer Note */}
-        <p className="mt-6 sm:mt-8 text-center text-xs text-gray-500 leading-relaxed px-4">
+        <p className="mt-5 sm:mt-6 mb-4 text-center text-xs text-gray-500 leading-relaxed px-4">
           By continuing, you agree to our Terms of Service and Privacy Policy
         </p>
       </div>
