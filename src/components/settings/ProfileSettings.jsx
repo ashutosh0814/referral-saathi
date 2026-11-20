@@ -41,7 +41,7 @@ export default function ProfileSettings({ user }) {
   const hasChanges = displayName !== (user?.displayName || '');
 
   return (
-    <div className="bg-amber-50/40 rounded-lg shadow p-6">
+    <div className="bg-green-50/40 rounded-lg shadow p-6">
       <h2 className="text-lg font-semibold text-gray-900 mb-4">Profile Information</h2>
 
       <form onSubmit={handleUpdateProfile} className="space-y-4">

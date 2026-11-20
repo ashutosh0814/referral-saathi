@@ -64,15 +64,15 @@ function ReferralCard({ referral, onEdit, onDelete, onClick }) {
   return (
     <div
       onClick={() => onClick(referral)}
-      className="bg-amber-50/40 border border-amber-200/60 rounded-xl p-4 sm:p-5 hover:shadow-md hover:border-amber-300 transition-all duration-200 cursor-pointer group"
+      className="bg-green-50/40 border border-green-200/60 rounded-xl p-4 sm:p-5 hover:shadow-md hover:border-green-300 transition-all duration-200 cursor-pointer group"
     >
       <div className="flex items-start justify-between gap-2 sm:gap-3 mb-3 sm:mb-4">
         {/* Company & Job Info */}
         <div className="flex-1 min-w-0">
           <div className="flex items-start gap-2 mb-2">
-            <Building2 className="w-4 h-4 sm:w-5 sm:h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+            <Building2 className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 flex-shrink-0 mt-0.5" />
             <div className="flex-1 min-w-0">
-              <h3 className="font-semibold text-sm sm:text-base text-gray-900 truncate group-hover:text-amber-600 transition-colors">
+              <h3 className="font-semibold text-sm sm:text-base text-gray-900 truncate group-hover:text-green-600 transition-colors">
                 {referral.companyName}
               </h3>
               <div className="flex items-center gap-1.5 text-xs sm:text-sm text-gray-600 mt-1">

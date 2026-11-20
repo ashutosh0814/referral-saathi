@@ -98,7 +98,7 @@ function DashboardPage() {
   const isLoading = isLoadingReferrals || isLoadingReminders;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50">
       <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 py-4 sm:py-6 lg:py-8">
         {/* Header */}
         <div className="mb-4 sm:mb-6 lg:mb-8">
@@ -112,7 +112,7 @@ function DashboardPage() {
 
         {/* Quick Stats */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 lg:gap-4 mb-4 sm:mb-6 lg:mb-8">
-          <div className="bg-amber-50/40 border border-amber-200/60 rounded-xl p-3 sm:p-4 lg:p-5 shadow-sm hover:shadow-md transition-shadow">
+          <div className="bg-green-50/40 border border-green-200/60 rounded-xl p-3 sm:p-4 lg:p-5 shadow-sm hover:shadow-md transition-shadow">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
               <div className="flex-1">
                 <p className="text-xs text-gray-600 mb-1">Active Referrals</p>
@@ -120,11 +120,11 @@ function DashboardPage() {
                   {isLoading ? '-' : activeReferrals}
                 </p>
               </div>
-              <TrendingUp className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-amber-600" />
+              <TrendingUp className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-green-600" />
             </div>
           </div>
 
-          <div className="bg-amber-50/40 border border-amber-200/60 rounded-xl p-3 sm:p-4 lg:p-5 shadow-sm hover:shadow-md transition-shadow">
+          <div className="bg-green-50/40 border border-green-200/60 rounded-xl p-3 sm:p-4 lg:p-5 shadow-sm hover:shadow-md transition-shadow">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
               <div className="flex-1">
                 <p className="text-xs text-gray-600 mb-1">Pending Replies</p>
@@ -136,7 +136,7 @@ function DashboardPage() {
             </div>
           </div>
 
-          <div className="bg-amber-50/40 border border-amber-200/60 rounded-xl p-3 sm:p-4 lg:p-5 shadow-sm hover:shadow-md transition-shadow">
+          <div className="bg-green-50/40 border border-green-200/60 rounded-xl p-3 sm:p-4 lg:p-5 shadow-sm hover:shadow-md transition-shadow">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
               <div className="flex-1">
                 <p className="text-xs text-gray-600 mb-1">Due Today</p>
@@ -144,11 +144,11 @@ function DashboardPage() {
                   {isLoading ? '-' : reminderStats?.dueToday || 0}
                 </p>
               </div>
-              <Clock className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-amber-600" />
+              <Clock className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-green-600" />
             </div>
           </div>
 
-          <div className="bg-amber-50/40 border border-amber-200/60 rounded-xl p-3 sm:p-4 lg:p-5 shadow-sm hover:shadow-md transition-shadow">
+          <div className="bg-green-50/40 border border-green-200/60 rounded-xl p-3 sm:p-4 lg:p-5 shadow-sm hover:shadow-md transition-shadow">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
               <div className="flex-1">
                 <p className="text-xs text-gray-600 mb-1">Overdue</p>
@@ -162,11 +162,11 @@ function DashboardPage() {
         </div>
 
         {/* Quick Actions */}
-        <div className="bg-gradient-to-r from-amber-500 to-amber-600 rounded-xl p-4 sm:p-5 lg:p-6 mb-4 sm:mb-6 lg:mb-8 shadow-lg">
+        <div className="bg-gradient-to-r from-green-500 to-green-600 rounded-xl p-4 sm:p-5 lg:p-6 mb-4 sm:mb-6 lg:mb-8 shadow-lg">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4">
             <div className="text-white">
               <h2 className="text-base sm:text-lg lg:text-xl font-semibold mb-1 sm:mb-2">Quick Actions</h2>
-              <p className="text-amber-100 text-xs sm:text-sm">
+              <p className="text-green-100 text-xs sm:text-sm">
                 Jump right into your workflow
               </p>
             </div>
@@ -252,7 +252,7 @@ function DashboardPage() {
                 <div
                   key={referral.id}
                   onClick={() => navigate(`/referrals/${referral.id}`)}
-                  className="flex items-center gap-3 p-4 border border-gray-200 rounded-xl hover:bg-amber-50 hover:border-amber-300 transition-all cursor-pointer group"
+                  className="flex items-center gap-3 p-4 border border-gray-200 rounded-xl hover:bg-green-50 hover:border-green-300 transition-all cursor-pointer group"
                 >
                   <div className="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-blue-200 transition-colors">
                     <MessageSquare className="w-5 h-5 text-blue-600" />
@@ -294,8 +294,8 @@ function DashboardPage() {
         {/* Empty State */}
         {!isLoading && referrals.length === 0 && (
           <div className="mt-6 bg-amber-50/40 border border-amber-200/60 rounded-xl p-8 sm:p-12 text-center shadow-sm">
-            <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <CheckCircle2 className="w-8 h-8 text-amber-600" />
+            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <CheckCircle2 className="w-8 h-8 text-green-600" />
             </div>
             <h3 className="text-lg font-semibold text-gray-900 mb-2">
               Ready to start tracking referrals?

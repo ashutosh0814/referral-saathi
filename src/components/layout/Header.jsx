@@ -105,7 +105,7 @@ function Header({ onMenuClick }) {
 
           {/* Logo - Show only on mobile */}
           <div className="flex items-center gap-2 sm:gap-3 lg:hidden">
-            <div className="w-8 h-8 sm:w-9 sm:h-9 bg-gradient-to-br from-amber-500 to-amber-600 rounded-xl flex items-center justify-center shadow-sm">
+            <div className="w-8 h-8 sm:w-9 sm:h-9 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center shadow-sm">
               <svg
                 className="w-4 h-4 sm:w-5 sm:h-5 text-white"
                 fill="none"
@@ -164,7 +164,7 @@ function Header({ onMenuClick }) {
                   className="w-8 h-8 sm:w-9 sm:h-9 rounded-full ring-2 ring-gray-200"
                 />
               ) : (
-                <div className="w-8 h-8 sm:w-9 sm:h-9 bg-amber-100 text-amber-700 rounded-full flex items-center justify-center font-semibold text-xs sm:text-sm shadow-sm">
+                <div className="w-8 h-8 sm:w-9 sm:h-9 bg-green-100 text-green-700 rounded-full flex items-center justify-center font-semibold text-xs sm:text-sm shadow-sm">
                   {user?.displayName ? user.displayName.charAt(0).toUpperCase() : 'G'}
                 </div>
               )}

@@ -136,11 +136,11 @@ function AuthPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50 flex items-center justify-center p-4 sm:p-6">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50 flex items-center justify-center p-4 sm:p-6">
       <div className="w-full max-w-md">
         {/* Logo */}
         <div className="text-center mb-8 sm:mb-12">
-          <div className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-amber-500 to-amber-600 rounded-2xl shadow-lg shadow-amber-500/20 mb-4 sm:mb-5">
+          <div className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl shadow-lg shadow-green-500/20 mb-4 sm:mb-5">
             <Sparkles className="w-7 h-7 sm:w-9 sm:h-9 text-white" />
           </div>
           <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2 tracking-tight">
@@ -193,7 +193,7 @@ function AuthPage() {
                   <div className="w-full border-t border-gray-200"></div>
                 </div>
                 <div className="relative flex justify-center text-sm">
-                  <span className="px-4 bg-amber-50/80 text-gray-500 font-medium">Or continue with email</span>
+                  <span className="px-4 bg-green-50/80 text-gray-500 font-medium">Or continue with email</span>
                 </div>
               </div>
             </>

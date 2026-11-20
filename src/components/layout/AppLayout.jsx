@@ -20,7 +20,7 @@ function AppLayout() {
   };
 
   return (
-    <div className="min-h-screen bg-amber-50 flex flex-col">
+    <div className="min-h-screen bg-green-50 flex flex-col">
       {/* Header - Full width at top */}
       <Header onMenuClick={handleMenuClick} />
 

@@ -30,7 +30,7 @@ function ReferralFilters({
             placeholder="Search company, job, or name..."
             value={searchQuery}
             onChange={(e) => onSearchChange(e.target.value)}
-            className="w-full pl-10 sm:pl-12 pr-9 sm:pr-10 py-2.5 sm:py-3 text-sm sm:text-base border border-amber-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all"
+            className="w-full pl-10 sm:pl-12 pr-9 sm:pr-10 py-2.5 sm:py-3 text-sm sm:text-base border border-green-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all"
           />
           {searchQuery && (
             <button
@@ -48,7 +48,7 @@ function ReferralFilters({
           <select
             value={statusFilter}
             onChange={(e) => onStatusFilterChange(e.target.value)}
-            className="w-full px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base border border-amber-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all appearance-none bg-white cursor-pointer"
+            className="w-full px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base border border-green-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all appearance-none bg-white cursor-pointer"
           >
             <option value="all">All Status</option>
             {Object.entries(REFERRAL_STATUS).map(([key, value]) => (
@@ -83,7 +83,7 @@ function ReferralFilters({
                 onSearchChange('');
                 onStatusFilterChange('all');
               }}
-              className="text-amber-600 hover:text-amber-700 font-medium transition-colors text-xs sm:text-sm"
+              className="text-green-600 hover:text-green-700 font-medium transition-colors text-xs sm:text-sm"
             >
               Clear filters
             </button>

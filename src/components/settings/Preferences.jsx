@@ -65,7 +65,7 @@ export default function Preferences() {
   };
 
   return (
-    <div className="bg-amber-50/40 rounded-lg shadow p-6">
+    <div className="bg-green-50/40 rounded-lg shadow p-6">
       <h2 className="text-lg font-semibold text-gray-900 mb-4">
         <Settings className="inline w-5 h-5 mr-2" />
         Preferences
