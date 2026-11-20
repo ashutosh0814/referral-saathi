@@ -90,7 +90,7 @@ function Header({ onMenuClick }) {
 
   return (
     <header className="bg-white border-b border-gray-100 z-30 shadow-sm flex-shrink-0">
-      <div className="flex items-center justify-between h-14 px-4 sm:px-6 lg:px-8">
+      <div className="flex items-center justify-between h-12 sm:h-14 px-3 sm:px-4 lg:px-8">
         {/* Left: Mobile menu button only */}
         <div className="flex items-center gap-4">
           {/* Mobile Menu Button */}
@@ -104,10 +104,10 @@ function Header({ onMenuClick }) {
           </button>
 
           {/* Logo - Show only on mobile */}
-          <div className="flex items-center gap-3 lg:hidden">
-            <div className="w-9 h-9 bg-gradient-to-br from-violet-600 to-violet-700 rounded-xl flex items-center justify-center shadow-sm">
+          <div className="flex items-center gap-2 sm:gap-3 lg:hidden">
+            <div className="w-8 h-8 sm:w-9 sm:h-9 bg-gradient-to-br from-amber-500 to-amber-600 rounded-xl flex items-center justify-center shadow-sm">
               <svg
-                className="w-5 h-5 text-white"
+                className="w-4 h-4 sm:w-5 sm:h-5 text-white"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -121,20 +121,20 @@ function Header({ onMenuClick }) {
                 />
               </svg>
             </div>
-            <span className="text-lg font-semibold text-gray-900 tracking-tight">
+            <span className="text-base sm:text-lg font-semibold text-gray-900 tracking-tight">
               ReferralSaathi
             </span>
           </div>
         </div>
 
         {/* Right: Notifications + User Menu */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
           {/* Notifications */}
           <button
-            className="relative p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2"
+            className="relative p-1.5 sm:p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2"
             aria-label="Notifications"
           >
-            <Bell className="w-5 h-5" />
+            <Bell className="w-4 h-4 sm:w-5 sm:h-5" />
             <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-red-500 rounded-full ring-2 ring-white" aria-hidden="true"></span>
             <span className="sr-only">You have unread notifications</span>
           </button>
@@ -144,13 +144,13 @@ function Header({ onMenuClick }) {
             <button
               ref={buttonRef}
               onClick={() => setShowUserMenu(!showUserMenu)}
-              className="flex items-center gap-3 p-2 pr-3 hover:bg-gray-50 rounded-lg transition-colors border border-transparent hover:border-gray-200 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2"
+              className="flex items-center gap-2 sm:gap-3 p-1.5 sm:p-2 sm:pr-3 hover:bg-gray-50 rounded-lg transition-colors border border-transparent hover:border-gray-200 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2"
               aria-label="User menu"
               aria-expanded={showUserMenu}
               aria-haspopup="true"
             >
               <div className="hidden md:block text-right">
-                <p className="text-sm font-medium text-gray-900 tracking-tight">
+                <p className="text-xs sm:text-sm font-medium text-gray-900 tracking-tight">
                   {user?.displayName || 'Guest User'}
                 </p>
                 <p className="text-xs text-gray-500 truncate max-w-[150px]">
@@ -161,10 +161,10 @@ function Header({ onMenuClick }) {
                 <img 
                   src={user.photoURL} 
                   alt={user.displayName || 'User'}
-                  className="w-9 h-9 rounded-full ring-2 ring-gray-200"
+                  className="w-8 h-8 sm:w-9 sm:h-9 rounded-full ring-2 ring-gray-200"
                 />
               ) : (
-                <div className="w-9 h-9 bg-violet-100 text-violet-700 rounded-full flex items-center justify-center font-semibold text-sm shadow-sm">
+                <div className="w-8 h-8 sm:w-9 sm:h-9 bg-amber-100 text-amber-700 rounded-full flex items-center justify-center font-semibold text-xs sm:text-sm shadow-sm">
                   {user?.displayName ? user.displayName.charAt(0).toUpperCase() : 'G'}
                 </div>
               )}
@@ -183,13 +183,13 @@ function Header({ onMenuClick }) {
                 {/* Menu */}
                 <div
                   ref={menuRef}
-                  className="absolute right-0 mt-2 w-60 bg-white rounded-xl shadow-xl border border-gray-200 py-1.5 z-20 animate-slide-in-down"
+                  className="absolute right-0 mt-2 w-52 sm:w-60 bg-white rounded-xl shadow-xl border border-gray-200 py-1 sm:py-1.5 z-20 animate-slide-in-down"
                   role="menu"
                   aria-orientation="vertical"
                 >
                   {/* User Info - Mobile only */}
-                  <div className="md:hidden px-4 py-3 border-b border-gray-100">
-                    <p className="text-sm font-medium text-gray-900 break-words">
+                  <div className="md:hidden px-3 sm:px-4 py-2 sm:py-3 border-b border-gray-100">
+                    <p className="text-xs sm:text-sm font-medium text-gray-900 break-words">
                       {user?.displayName || 'Guest User'}
                     </p>
                     <p className="text-xs text-gray-500 mt-0.5 break-words">
@@ -203,19 +203,19 @@ function Header({ onMenuClick }) {
                       navigate('/settings');
                       setShowUserMenu(false);
                     }}
-                    className="w-full flex items-center gap-3 px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 transition-colors font-medium text-left focus:outline-none focus:bg-gray-100"
+                    className="w-full flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm text-gray-700 hover:bg-gray-50 transition-colors font-medium text-left focus:outline-none focus:bg-gray-100"
                     role="menuitem"
                   >
-                    <SettingsIcon className="w-4 h-4" aria-hidden="true" />
+                    <SettingsIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4" aria-hidden="true" />
                     Settings
                   </button>
-                  <div className="my-1 border-t border-gray-100" role="separator"></div>
+                  <div className="my-0.5 sm:my-1 border-t border-gray-100" role="separator"></div>
                   <button
                     onClick={handleLogout}
-                    className="w-full flex items-center gap-3 px-4 py-2.5 text-sm text-red-600 hover:bg-red-50 transition-colors font-medium text-left focus:outline-none focus:bg-red-100"
+                    className="w-full flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm text-red-600 hover:bg-red-50 transition-colors font-medium text-left focus:outline-none focus:bg-red-100"
                     role="menuitem"
                   >
-                    <LogOut className="w-4 h-4" aria-hidden="true" />
+                    <LogOut className="w-3.5 h-3.5 sm:w-4 sm:h-4" aria-hidden="true" />
                     Sign Out
                   </button>
                 </div>

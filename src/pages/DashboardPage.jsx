@@ -99,10 +99,10 @@ function DashboardPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 py-4 sm:py-6 lg:py-8">
         {/* Header */}
-        <div className="mb-6 sm:mb-8">
-          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
+        <div className="mb-4 sm:mb-6 lg:mb-8">
+          <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-1 sm:mb-2">
             Dashboard
           </h1>
           <p className="text-sm sm:text-base text-gray-600">
@@ -111,81 +111,83 @@ function DashboardPage() {
         </div>
 
         {/* Quick Stats */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-6 sm:mb-8">
-          <div className="bg-amber-50/40 border border-amber-200/60 rounded-xl p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 lg:gap-4 mb-4 sm:mb-6 lg:mb-8">
+          <div className="bg-amber-50/40 border border-amber-200/60 rounded-xl p-3 sm:p-4 lg:p-5 shadow-sm hover:shadow-md transition-shadow">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
               <div className="flex-1">
-                <p className="text-xs sm:text-sm text-gray-600 mb-1">Active Referrals</p>
-                <p className="text-xl sm:text-2xl font-bold text-gray-900">
+                <p className="text-xs text-gray-600 mb-1">Active Referrals</p>
+                <p className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900">
                   {isLoading ? '-' : activeReferrals}
                 </p>
               </div>
-              <TrendingUp className="w-7 h-7 sm:w-8 sm:h-8 text-amber-600" />
+              <TrendingUp className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-amber-600" />
             </div>
           </div>
 
-          <div className="bg-amber-50/40 border border-amber-200/60 rounded-xl p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow">
+          <div className="bg-amber-50/40 border border-amber-200/60 rounded-xl p-3 sm:p-4 lg:p-5 shadow-sm hover:shadow-md transition-shadow">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
               <div className="flex-1">
-                <p className="text-xs sm:text-sm text-gray-600 mb-1">Pending Replies</p>
-                <p className="text-xl sm:text-2xl font-bold text-gray-900">
+                <p className="text-xs text-gray-600 mb-1">Pending Replies</p>
+                <p className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900">
                   {isLoading ? '-' : pendingConversations.length}
                 </p>
               </div>
-              <MessageSquare className="w-7 h-7 sm:w-8 sm:h-8 text-blue-600" />
+              <MessageSquare className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-blue-600" />
             </div>
           </div>
 
-          <div className="bg-amber-50/40 border border-amber-200/60 rounded-xl p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow">
+          <div className="bg-amber-50/40 border border-amber-200/60 rounded-xl p-3 sm:p-4 lg:p-5 shadow-sm hover:shadow-md transition-shadow">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
               <div className="flex-1">
-                <p className="text-xs sm:text-sm text-gray-600 mb-1">Due Today</p>
-                <p className="text-xl sm:text-2xl font-bold text-gray-900">
+                <p className="text-xs text-gray-600 mb-1">Due Today</p>
+                <p className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900">
                   {isLoading ? '-' : reminderStats?.dueToday || 0}
                 </p>
               </div>
-              <Clock className="w-7 h-7 sm:w-8 sm:h-8 text-amber-600" />
+              <Clock className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-amber-600" />
             </div>
           </div>
 
-          <div className="bg-amber-50/40 border border-amber-200/60 rounded-xl p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow">
+          <div className="bg-amber-50/40 border border-amber-200/60 rounded-xl p-3 sm:p-4 lg:p-5 shadow-sm hover:shadow-md transition-shadow">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
               <div className="flex-1">
-                <p className="text-xs sm:text-sm text-gray-600 mb-1">Overdue</p>
-                <p className="text-xl sm:text-2xl font-bold text-gray-900">
+                <p className="text-xs text-gray-600 mb-1">Overdue</p>
+                <p className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900">
                   {isLoading ? '-' : reminderStats?.overdue || 0}
                 </p>
               </div>
-              <AlertCircle className="w-7 h-7 sm:w-8 sm:h-8 text-red-600" />
+              <AlertCircle className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-red-600" />
             </div>
           </div>
         </div>
 
         {/* Quick Actions */}
-        <div className="bg-gradient-to-r from-amber-500 to-amber-600 rounded-xl p-5 sm:p-6 mb-6 sm:mb-8 shadow-lg">
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div className="bg-gradient-to-r from-amber-500 to-amber-600 rounded-xl p-4 sm:p-5 lg:p-6 mb-4 sm:mb-6 lg:mb-8 shadow-lg">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4">
             <div className="text-white">
-              <h2 className="text-lg sm:text-xl font-semibold mb-1 sm:mb-2">Quick Actions</h2>
+              <h2 className="text-base sm:text-lg lg:text-xl font-semibold mb-1 sm:mb-2">Quick Actions</h2>
               <p className="text-amber-100 text-xs sm:text-sm">
                 Jump right into your workflow
               </p>
             </div>
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-3">
               <Button
+                type="button"
                 variant="secondary"
                 size="sm"
                 onClick={() => setShowAddReferralModal(true)}
                 leftIcon={<Plus className="w-4 h-4" />}
-                className="w-full sm:w-auto"
+                className="w-full sm:w-auto text-sm"
               >
                 Add Referral
               </Button>
               <Button
+                type="button"
                 variant="secondary"
                 size="sm"
                 onClick={() => navigate('/referrals')}
                 leftIcon={<MessageSquare className="w-4 h-4" />}
-                className="w-full sm:w-auto"
+                className="w-full sm:w-auto text-sm"
               >
                 Reply Assistant
               </Button>
@@ -220,7 +222,7 @@ function DashboardPage() {
         )}
 
         {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 mb-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4 lg:gap-6 mb-4 sm:mb-6">
           {/* Recent Referrals */}
           <RecentReferrals 
             referrals={referrals}

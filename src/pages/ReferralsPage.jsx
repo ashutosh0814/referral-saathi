@@ -108,14 +108,14 @@ function ReferralsPage() {
 
   return (
     <div className="min-h-screen">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-8">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 py-4 sm:py-6 lg:py-8">
         {/* Page Header */}
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4 mb-4 sm:mb-6 lg:mb-8">
           <div>
-            <h1 className="text-4xl font-bold text-gray-900 mb-2 tracking-tight">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-1 sm:mb-2 tracking-tight">
               My Referrals
             </h1>
-            <p className="text-gray-600">
+            <p className="text-sm sm:text-base text-gray-600">
               Manage and track all your referral opportunities
             </p>
           </div>
@@ -123,13 +123,14 @@ function ReferralsPage() {
             leftIcon={<Plus />} 
             size="lg"
             onClick={handleAddClick}
+            className="w-full sm:w-auto"
           >
             Add Referral
           </Button>
         </div>
 
         {/* Search and Filter */}
-        <div className="mb-6">
+        <div className="mb-4 sm:mb-6">
           <ReferralFilters
             searchQuery={searchQuery}
             onSearchChange={setSearchQuery}
@@ -142,7 +143,7 @@ function ReferralsPage() {
         {/* Content Area */}
         {error ? (
           // Error State
-          <div className="bg-red-50 border border-red-200 rounded-lg p-6">
+          <div className="bg-red-50 border border-red-200 rounded-lg p-4 sm:p-6">
             <div className="flex items-start gap-3">
               <AlertCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
               <div>
@@ -157,13 +158,13 @@ function ReferralsPage() {
           </div>
         ) : isLoading ? (
           // Loading State
-          <div className="flex flex-col items-center justify-center py-20">
-            <Loader2 className="w-12 h-12 text-violet-600 animate-spin mb-4" />
-            <p className="text-gray-600">Loading your referrals...</p>
+          <div className="flex flex-col items-center justify-center py-12 sm:py-16 lg:py-20">
+            <Loader2 className="w-10 h-10 sm:w-12 sm:h-12 text-amber-600 animate-spin mb-3 sm:mb-4" />
+            <p className="text-sm sm:text-base text-gray-600">Loading your referrals...</p>
           </div>
         ) : referrals.length > 0 ? (
           // Referrals Grid
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-5">
             {referrals.map((referral) => (
               <ReferralCard
                 key={referral.id}
@@ -220,14 +221,14 @@ function ReferralsPage() {
           />
 
           {/* Modal */}
-          <div className="flex min-h-full items-center justify-center p-4">
-            <div className="relative bg-white rounded-lg shadow-xl w-full max-w-md p-6">
-              <div className="flex items-start gap-4 mb-6">
+          <div className="flex min-h-full items-center justify-center p-3 sm:p-4">
+            <div className="relative bg-white rounded-lg shadow-xl w-full max-w-md p-4 sm:p-6">
+              <div className="flex items-start gap-3 sm:gap-4 mb-4 sm:mb-6">
                 <div className="w-10 h-10 bg-red-50 rounded-full flex items-center justify-center flex-shrink-0">
                   <AlertCircle className="w-5 h-5 text-red-600" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                  <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-1">
                     Delete Referral
                   </h3>
                   <p className="text-sm text-gray-600">
@@ -238,11 +239,11 @@ function ReferralsPage() {
                 </div>
               </div>
 
-              <div className="flex items-center justify-end gap-3">
-                <Button variant="ghost" onClick={cancelDelete}>
+              <div className="flex flex-col-reverse sm:flex-row items-stretch sm:items-center sm:justify-end gap-2 sm:gap-3">
+                <Button variant="ghost" onClick={cancelDelete} className="w-full sm:w-auto">
                   Cancel
                 </Button>
-                <Button variant="danger" onClick={confirmDelete}>
+                <Button variant="danger" onClick={confirmDelete} className="w-full sm:w-auto">
                   Delete
                 </Button>
               </div>

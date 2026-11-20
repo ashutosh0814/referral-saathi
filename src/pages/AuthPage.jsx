@@ -136,17 +136,17 @@ function AuthPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50 flex items-center justify-center p-6">
+    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50 flex items-center justify-center p-4 sm:p-6">
       <div className="w-full max-w-md">
         {/* Logo */}
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-amber-500 to-amber-600 rounded-2xl shadow-lg shadow-amber-500/20 mb-5">
-            <Sparkles className="w-9 h-9 text-white" />
+        <div className="text-center mb-8 sm:mb-12">
+          <div className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-amber-500 to-amber-600 rounded-2xl shadow-lg shadow-amber-500/20 mb-4 sm:mb-5">
+            <Sparkles className="w-7 h-7 sm:w-9 sm:h-9 text-white" />
           </div>
-          <h1 className="text-4xl font-bold text-gray-900 mb-2 tracking-tight">
+          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2 tracking-tight">
             ReferralSaathi
           </h1>
-          <p className="text-gray-600 font-medium">
+          <p className="text-sm sm:text-base text-gray-600 font-medium">
             {mode === 'reset' 
               ? 'Reset your password' 
               : mode === 'register'
@@ -156,7 +156,7 @@ function AuthPage() {
         </div>
 
         {/* Auth Card */}
-        <div className="card p-8 shadow-lg">
+        <div className="card p-5 sm:p-8 shadow-lg">
           {/* Error Message */}
           {error && (
             <div className="alert alert-error mb-6">
@@ -188,7 +188,7 @@ function AuthPage() {
                 Continue with Google
               </Button>
 
-              <div className="relative my-8">
+              <div className="relative my-6 sm:my-8">
                 <div className="absolute inset-0 flex items-center">
                   <div className="w-full border-t border-gray-200"></div>
                 </div>
@@ -327,7 +327,7 @@ function AuthPage() {
           </form>
 
           {/* Mode Switch */}
-          <div className="mt-8 text-center">
+          <div className="mt-6 sm:mt-8 text-center">
             {mode === 'reset' ? (
               <p className="text-sm text-gray-600">
                 Remember your password?{' '}

@@ -62,17 +62,17 @@ export default function SettingsPage() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto py-8 px-4">
+    <div className="max-w-4xl mx-auto py-4 sm:py-6 lg:py-8 px-3 sm:px-4 lg:px-6">
       {/* Header */}
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900">Settings</h1>
-        <p className="text-gray-600 mt-2">
+      <div className="mb-4 sm:mb-6 lg:mb-8">
+        <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">Settings</h1>
+        <p className="text-sm sm:text-base text-gray-600 mt-1 sm:mt-2">
           Manage your account, preferences, and data
         </p>
       </div>
 
       {/* Main Content */}
-      <div className="space-y-6">
+      <div className="space-y-4 sm:space-y-6">
         {/* Profile Settings */}
         <ProfileSettings user={user} />
 
@@ -80,18 +80,18 @@ export default function SettingsPage() {
         <Preferences />
 
         {/* Account Actions */}
-        <div className="bg-amber-50/40 rounded-lg shadow p-6">
-          <h2 className="text-lg font-semibold text-gray-900 mb-4">
-            <Shield className="inline w-5 h-5 mr-2" />
+        <div className="bg-amber-50/40 rounded-lg shadow p-4 sm:p-6">
+          <h2 className="text-base sm:text-lg font-semibold text-gray-900 mb-3 sm:mb-4">
+            <Shield className="inline w-4 h-4 sm:w-5 sm:h-5 mr-2" />
             Account Actions
           </h2>
 
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4">
             {/* Sign Out */}
-            <div className="flex items-start justify-between p-4 border border-gray-200 rounded-md">
-              <div>
-                <div className="font-medium text-gray-900">Sign Out</div>
-                <p className="text-sm text-gray-600 mt-1">
+            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between p-3 sm:p-4 border border-gray-200 rounded-md gap-3">
+              <div className="flex-1">
+                <div className="font-medium text-sm sm:text-base text-gray-900">Sign Out</div>
+                <p className="text-xs sm:text-sm text-gray-600 mt-1">
                   Sign out of your account on this device
                 </p>
               </div>
@@ -99,7 +99,7 @@ export default function SettingsPage() {
                 variant="secondary"
                 onClick={handleLogout}
                 loading={logoutLoading}
-                className="ml-4"
+                className="w-full sm:w-auto sm:ml-4"
               >
                 <LogOut className="w-4 h-4 mr-2" />
                 Sign Out
@@ -107,12 +107,12 @@ export default function SettingsPage() {
             </div>
 
             {/* Delete All Data */}
-            <div className="border border-red-200 rounded-md p-4 bg-red-50">
-              <div className="flex items-start gap-3">
+            <div className="border border-red-200 rounded-md p-3 sm:p-4 bg-red-50">
+              <div className="flex items-start gap-2 sm:gap-3">
                 <AlertTriangle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
                 <div className="flex-1">
-                  <div className="font-medium text-red-900">Danger Zone</div>
-                  <p className="text-sm text-red-700 mt-1">
+                  <div className="font-medium text-sm sm:text-base text-red-900">Danger Zone</div>
+                  <p className="text-xs sm:text-sm text-red-700 mt-1">
                     Delete all your referrals, conversations, reminders, and preferences. This action cannot be undone.
                   </p>
                   
@@ -120,14 +120,14 @@ export default function SettingsPage() {
                     <Button
                       variant="secondary"
                       onClick={() => setShowDeleteConfirm(true)}
-                      className="mt-3 border-red-300 text-red-700 hover:bg-red-100"
+                      className="mt-3 w-full sm:w-auto border-red-300 text-red-700 hover:bg-red-100"
                     >
                       <Trash2 className="w-4 h-4 mr-2" />
                       Delete All My Data
                     </Button>
                   ) : (
                     <div className="mt-3 p-3 bg-white border border-red-300 rounded-md">
-                      <p className="text-sm font-medium text-red-900 mb-3">
+                      <p className="text-xs sm:text-sm font-medium text-red-900 mb-2 sm:mb-3">
                         Are you absolutely sure?
                       </p>
                       <p className="text-xs text-red-700 mb-3">
@@ -142,22 +142,23 @@ export default function SettingsPage() {
                       <p className="text-xs text-red-700 mb-4">
                         Your account will remain active, but all data will be erased.
                       </p>
-                      <div className="flex gap-2">
-                        <Button
-                          variant="primary"
-                          onClick={handleDeleteAllData}
-                          loading={deleteLoading}
-                          className="bg-red-600 hover:bg-red-700"
-                        >
-                          <Trash2 className="w-4 h-4 mr-2" />
-                          Yes, Delete Everything
-                        </Button>
+                      <div className="flex flex-col-reverse sm:flex-row gap-2">
                         <Button
                           variant="secondary"
                           onClick={() => setShowDeleteConfirm(false)}
                           disabled={deleteLoading}
+                          className="w-full sm:w-auto"
                         >
                           Cancel
+                        </Button>
+                        <Button
+                          variant="primary"
+                          onClick={handleDeleteAllData}
+                          loading={deleteLoading}
+                          className="w-full sm:w-auto bg-red-600 hover:bg-red-700"
+                        >
+                          <Trash2 className="w-4 h-4 mr-2" />
+                          Yes, Delete Everything
                         </Button>
                       </div>
                     </div>
@@ -169,8 +170,8 @@ export default function SettingsPage() {
         </div>
 
         {/* Privacy Notice */}
-        <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-          <div className="flex items-start gap-3">
+        <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 sm:p-4">
+          <div className="flex items-start gap-2 sm:gap-3">
             <Database className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
             <div>
               <h3 className="text-sm font-medium text-blue-900">Data Privacy</h3>
