@@ -80,7 +80,7 @@ export default function SettingsPage() {
         <Preferences />
 
         {/* Account Actions */}
-        <div className="bg-white rounded-lg shadow p-6">
+        <div className="bg-amber-50/40 rounded-lg shadow p-6">
           <h2 className="text-lg font-semibold text-gray-900 mb-4">
             <Shield className="inline w-5 h-5 mr-2" />
             Account Actions

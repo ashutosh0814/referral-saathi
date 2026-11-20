@@ -193,7 +193,7 @@ function AuthPage() {
                   <div className="w-full border-t border-gray-200"></div>
                 </div>
                 <div className="relative flex justify-center text-sm">
-                  <span className="px-4 bg-white text-gray-500 font-medium">Or continue with email</span>
+                  <span className="px-4 bg-amber-50/80 text-gray-500 font-medium">Or continue with email</span>
                 </div>
               </div>
             </>

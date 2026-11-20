@@ -112,7 +112,7 @@ function DashboardPage() {
 
         {/* Quick Stats */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-6 sm:mb-8">
-          <div className="bg-white border border-gray-200 rounded-xl p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow">
+          <div className="bg-amber-50/40 border border-amber-200/60 rounded-xl p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
               <div className="flex-1">
                 <p className="text-xs sm:text-sm text-gray-600 mb-1">Active Referrals</p>
@@ -124,7 +124,7 @@ function DashboardPage() {
             </div>
           </div>
 
-          <div className="bg-white border border-gray-200 rounded-xl p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow">
+          <div className="bg-amber-50/40 border border-amber-200/60 rounded-xl p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
               <div className="flex-1">
                 <p className="text-xs sm:text-sm text-gray-600 mb-1">Pending Replies</p>
@@ -136,7 +136,7 @@ function DashboardPage() {
             </div>
           </div>
 
-          <div className="bg-white border border-gray-200 rounded-xl p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow">
+          <div className="bg-amber-50/40 border border-amber-200/60 rounded-xl p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
               <div className="flex-1">
                 <p className="text-xs sm:text-sm text-gray-600 mb-1">Due Today</p>
@@ -148,7 +148,7 @@ function DashboardPage() {
             </div>
           </div>
 
-          <div className="bg-white border border-gray-200 rounded-xl p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow">
+          <div className="bg-amber-50/40 border border-amber-200/60 rounded-xl p-4 sm:p-5 shadow-sm hover:shadow-md transition-shadow">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
               <div className="flex-1">
                 <p className="text-xs sm:text-sm text-gray-600 mb-1">Overdue</p>
@@ -237,7 +237,7 @@ function DashboardPage() {
 
         {/* Pending Conversations Section */}
         {pendingConversations.length > 0 && (
-          <div className="mt-6 bg-white border border-gray-200 rounded-xl p-5 sm:p-6 shadow-sm">
+          <div className="mt-6 bg-amber-50/40 border border-amber-200/60 rounded-xl p-5 sm:p-6 shadow-sm">
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-base sm:text-lg font-semibold text-gray-900">
                 Pending Conversations
@@ -291,7 +291,7 @@ function DashboardPage() {
 
         {/* Empty State */}
         {!isLoading && referrals.length === 0 && (
-          <div className="mt-6 bg-white border border-gray-200 rounded-xl p-8 sm:p-12 text-center shadow-sm">
+          <div className="mt-6 bg-amber-50/40 border border-amber-200/60 rounded-xl p-8 sm:p-12 text-center shadow-sm">
             <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <CheckCircle2 className="w-8 h-8 text-amber-600" />
             </div>

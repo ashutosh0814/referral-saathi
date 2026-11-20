@@ -77,11 +77,11 @@
 
   .btn-secondary {
     @apply bg-white text-gray-700;
-    @apply border border-gray-200 shadow-sm;
+    @apply border border-amber-200 shadow-sm;
   }
 
   .btn-secondary:hover:not(:disabled) {
-    @apply bg-gray-50 border-gray-300 shadow;
+    @apply bg-amber-50 border-amber-300 shadow;
   }
 
   .btn-ghost {
@@ -102,13 +102,13 @@
 
   /* Cards */
   .card {
-    @apply bg-white rounded-xl;
-    @apply border border-gray-200 shadow-sm;
+    @apply bg-amber-50/50 rounded-xl;
+    @apply border border-amber-200/60 shadow-sm;
     @apply transition-all duration-200;
   }
 
   .card:hover {
-    @apply border-gray-300 shadow;
+    @apply border-amber-300 shadow;
   }
 
   .card-interactive {
@@ -125,8 +125,8 @@
   .textarea,
   .select {
     @apply w-full px-4 py-3 text-sm;
-    @apply bg-white text-gray-900;
-    @apply border border-gray-200 rounded-xl;
+    @apply bg-white/80 text-gray-900;
+    @apply border border-amber-200 rounded-xl;
     @apply transition-all duration-150;
     @apply outline-none shadow-sm;
   }

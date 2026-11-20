@@ -43,7 +43,7 @@ function UpcomingReminders({ reminders, isLoading, onComplete }) {
 
   if (isLoading) {
     return (
-      <div className="bg-white border border-gray-200 rounded-lg p-6">
+      <div className="bg-amber-50/40 border border-amber-200/60 rounded-lg p-6">
         <h2 className="text-lg font-semibold text-gray-900 mb-4">Upcoming Reminders</h2>
         <div className="space-y-3">
           {[1, 2, 3].map((i) => (
@@ -58,7 +58,7 @@ function UpcomingReminders({ reminders, isLoading, onComplete }) {
 
   if (displayReminders.length === 0) {
     return (
-      <div className="bg-white border border-gray-200 rounded-lg p-6">
+      <div className="bg-amber-50/40 border border-amber-200/60 rounded-lg p-6">
         <h2 className="text-lg font-semibold text-gray-900 mb-4">Upcoming Reminders</h2>
         <div className="text-center py-8">
           <CheckCircle2 className="w-12 h-12 text-green-500 mx-auto mb-3" />
