@@ -136,11 +136,11 @@ function AuthPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-violet-50/30 flex items-center justify-center p-6">
+    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50 flex items-center justify-center p-6">
       <div className="w-full max-w-md">
         {/* Logo */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-violet-600 to-violet-700 rounded-2xl shadow-lg shadow-violet-500/20 mb-5">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-amber-500 to-amber-600 rounded-2xl shadow-lg shadow-amber-500/20 mb-5">
             <Sparkles className="w-9 h-9 text-white" />
           </div>
           <h1 className="text-4xl font-bold text-gray-900 mb-2 tracking-tight">
@@ -301,7 +301,7 @@ function AuthPage() {
                 <button
                   type="button"
                   onClick={() => switchMode('reset')}
-                  className="text-sm text-violet-600 hover:text-violet-700 font-semibold transition-colors"
+                  className="text-sm text-amber-600 hover:text-amber-700 font-semibold transition-colors"
                 >
                   Forgot password?
                 </button>
@@ -333,7 +333,7 @@ function AuthPage() {
                 Remember your password?{' '}
                 <button
                   onClick={() => switchMode('login')}
-                  className="text-violet-600 hover:text-violet-700 font-semibold transition-colors"
+                  className="text-amber-600 hover:text-amber-700 font-semibold transition-colors"
                 >
                   Sign in
                 </button>
@@ -343,7 +343,7 @@ function AuthPage() {
                 Already have an account?{' '}
                 <button
                   onClick={() => switchMode('login')}
-                  className="text-violet-600 hover:text-violet-700 font-semibold transition-colors"
+                  className="text-amber-600 hover:text-amber-700 font-semibold transition-colors"
                 >
                   Sign in
                 </button>
@@ -353,7 +353,7 @@ function AuthPage() {
                 Don't have an account?{' '}
                 <button
                   onClick={() => switchMode('register')}
-                  className="text-violet-600 hover:text-violet-700 font-semibold transition-colors"
+                  className="text-amber-600 hover:text-amber-700 font-semibold transition-colors"
                 >
                   Sign up
                 </button>

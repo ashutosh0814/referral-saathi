@@ -98,7 +98,7 @@ function DashboardPage() {
   const isLoading = isLoadingReferrals || isLoadingReminders;
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
         {/* Header */}
         <div className="mb-6 sm:mb-8">
@@ -120,7 +120,7 @@ function DashboardPage() {
                   {isLoading ? '-' : activeReferrals}
                 </p>
               </div>
-              <TrendingUp className="w-7 h-7 sm:w-8 sm:h-8 text-violet-600" />
+              <TrendingUp className="w-7 h-7 sm:w-8 sm:h-8 text-amber-600" />
             </div>
           </div>
 
@@ -162,11 +162,11 @@ function DashboardPage() {
         </div>
 
         {/* Quick Actions */}
-        <div className="bg-gradient-to-r from-violet-600 to-violet-700 rounded-xl p-5 sm:p-6 mb-6 sm:mb-8 shadow-lg">
+        <div className="bg-gradient-to-r from-amber-500 to-amber-600 rounded-xl p-5 sm:p-6 mb-6 sm:mb-8 shadow-lg">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div className="text-white">
               <h2 className="text-lg sm:text-xl font-semibold mb-1 sm:mb-2">Quick Actions</h2>
-              <p className="text-violet-100 text-xs sm:text-sm">
+              <p className="text-amber-100 text-xs sm:text-sm">
                 Jump right into your workflow
               </p>
             </div>
@@ -250,7 +250,7 @@ function DashboardPage() {
                 <div
                   key={referral.id}
                   onClick={() => navigate(`/referrals/${referral.id}`)}
-                  className="flex items-center gap-3 p-4 border border-gray-200 rounded-xl hover:bg-gray-50 hover:border-violet-300 transition-all cursor-pointer group"
+                  className="flex items-center gap-3 p-4 border border-gray-200 rounded-xl hover:bg-amber-50 hover:border-amber-300 transition-all cursor-pointer group"
                 >
                   <div className="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-blue-200 transition-colors">
                     <MessageSquare className="w-5 h-5 text-blue-600" />
@@ -292,8 +292,8 @@ function DashboardPage() {
         {/* Empty State */}
         {!isLoading && referrals.length === 0 && (
           <div className="mt-6 bg-white border border-gray-200 rounded-xl p-8 sm:p-12 text-center shadow-sm">
-            <div className="w-16 h-16 bg-violet-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <CheckCircle2 className="w-8 h-8 text-violet-600" />
+            <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <CheckCircle2 className="w-8 h-8 text-amber-600" />
             </div>
             <h3 className="text-lg font-semibold text-gray-900 mb-2">
               Ready to start tracking referrals?
