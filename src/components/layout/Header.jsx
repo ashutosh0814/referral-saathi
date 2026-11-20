@@ -89,7 +89,7 @@ function Header({ onMenuClick }) {
   }, [showUserMenu]);
 
   return (
-    <header className="bg-white border-b border-gray-100 z-30 shadow-sm flex-shrink-0">
+    <header className="bg-[#000000] border-b border-[#282828] z-30 shadow-sm flex-shrink-0">
       <div className="flex items-center justify-between h-12 sm:h-14 px-3 sm:px-4 lg:px-8">
         {/* Left: Mobile menu button only */}
         <div className="flex items-center gap-4">

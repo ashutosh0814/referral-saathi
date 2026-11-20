@@ -22,6 +22,7 @@ export default {
       },
       fontFamily: {
         sans: ['-apple-system', 'BlinkMacSystemFont', '"SF Pro Display"', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', 'sans-serif'],
+        poppins: ['Poppins', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
       },
       letterSpacing: {
         tighter: '-0.035em',

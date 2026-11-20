@@ -136,17 +136,17 @@ function AuthPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50 flex items-center justify-center p-4 sm:p-6">
+    <div className="min-h-screen bg-[#121212] flex items-center justify-center p-4 sm:p-6 overflow-hidden">
       <div className="w-full max-w-md">
         {/* Logo */}
-        <div className="text-center mb-8 sm:mb-12">
-          <div className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl shadow-lg shadow-green-500/20 mb-4 sm:mb-5">
-            <Sparkles className="w-7 h-7 sm:w-9 sm:h-9 text-white" />
+        <div className="text-center mb-8 sm:mb-10">
+          <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl shadow-lg shadow-green-500/20 mb-4 sm:mb-6">
+            <Sparkles className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
           </div>
-          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2 tracking-tight">
+          <h1 className="text-3xl sm:text-4xl font-bold text-white mb-2 tracking-tight">
             ReferralSaathi
           </h1>
-          <p className="text-sm sm:text-base text-gray-600 font-medium">
+          <p className="text-sm sm:text-base text-gray-400 font-medium">
             {mode === 'reset' 
               ? 'Reset your password' 
               : mode === 'register'
@@ -156,7 +156,7 @@ function AuthPage() {
         </div>
 
         {/* Auth Card */}
-        <div className="card p-5 sm:p-8 shadow-lg">
+        <div className="card p-6 sm:p-8 shadow-2xl border-[#282828]">
           {/* Error Message */}
           {error && (
             <div className="alert alert-error mb-6">
@@ -190,10 +190,10 @@ function AuthPage() {
 
               <div className="relative my-6 sm:my-8">
                 <div className="absolute inset-0 flex items-center">
-                  <div className="w-full border-t border-gray-200"></div>
+                  <div className="w-full border-t border-[#282828]"></div>
                 </div>
                 <div className="relative flex justify-center text-sm">
-                  <span className="px-4 bg-green-50/80 text-gray-500 font-medium">Or continue with email</span>
+                  <span className="px-4 bg-[#121212] text-gray-400 font-medium">Or continue with email</span>
                 </div>
               </div>
             </>
@@ -301,7 +301,7 @@ function AuthPage() {
                 <button
                   type="button"
                   onClick={() => switchMode('reset')}
-                  className="text-sm text-amber-600 hover:text-amber-700 font-semibold transition-colors"
+                  className="text-sm text-green-500 hover:text-green-400 font-semibold transition-colors"
                 >
                   Forgot password?
                 </button>
@@ -329,31 +329,31 @@ function AuthPage() {
           {/* Mode Switch */}
           <div className="mt-6 sm:mt-8 text-center">
             {mode === 'reset' ? (
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-gray-400">
                 Remember your password?{' '}
                 <button
                   onClick={() => switchMode('login')}
-                  className="text-amber-600 hover:text-amber-700 font-semibold transition-colors"
+                  className="text-green-500 hover:text-green-400 font-semibold transition-colors"
                 >
                   Sign in
                 </button>
               </p>
             ) : mode === 'register' ? (
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-gray-400">
                 Already have an account?{' '}
                 <button
                   onClick={() => switchMode('login')}
-                  className="text-amber-600 hover:text-amber-700 font-semibold transition-colors"
+                  className="text-green-500 hover:text-green-400 font-semibold transition-colors"
                 >
                   Sign in
                 </button>
               </p>
             ) : (
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-gray-400">
                 Don't have an account?{' '}
                 <button
                   onClick={() => switchMode('register')}
-                  className="text-amber-600 hover:text-amber-700 font-semibold transition-colors"
+                  className="text-green-500 hover:text-green-400 font-semibold transition-colors"
                 >
                   Sign up
                 </button>
@@ -363,7 +363,7 @@ function AuthPage() {
         </div>
 
         {/* Footer Note */}
-        <p className="mt-8 text-center text-xs text-gray-500 leading-relaxed px-4">
+        <p className="mt-6 sm:mt-8 text-center text-xs text-gray-500 leading-relaxed px-4">
           By continuing, you agree to our Terms of Service and Privacy Policy
         </p>
       </div>

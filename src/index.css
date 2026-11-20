@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -15,7 +17,7 @@
   }
 
   body {
-    @apply font-sans leading-normal text-[0.9375rem] bg-green-50 text-gray-900;
+    @apply font-poppins leading-normal text-[0.9375rem] bg-[#121212] text-gray-100;
     letter-spacing: -0.01em;
   }
 
@@ -66,22 +68,22 @@
   }
 
   .btn-primary {
-    @apply bg-gradient-to-r from-amber-500 to-amber-600;
+    @apply bg-gradient-to-r from-green-500 to-green-600;
     @apply text-white shadow-sm;
   }
 
   .btn-primary:hover:not(:disabled) {
-    @apply from-amber-600 to-amber-700 shadow-md;
-    transform: translateY(-1px);
+    @apply from-green-600 to-green-700 shadow-md;
+    transform: translateY(-1px) scale(1.02);
   }
 
   .btn-secondary {
-    @apply bg-white text-gray-700;
-    @apply border border-amber-200 shadow-sm;
+    @apply bg-[#282828] text-gray-100;
+    @apply border border-[#3e3e3e] shadow-sm;
   }
 
   .btn-secondary:hover:not(:disabled) {
-    @apply bg-amber-50 border-amber-300 shadow;
+    @apply bg-[#3e3e3e] border-[#535353] shadow;
   }
 
   .btn-ghost {
@@ -102,13 +104,13 @@
 
   /* Cards */
   .card {
-    @apply bg-green-50/50 rounded-xl;
-    @apply border border-green-200/60 shadow-sm;
+    @apply bg-[#1a1a1a] rounded-xl;
+    @apply border border-[#282828] shadow-sm;
     @apply transition-all duration-200;
   }
 
   .card:hover {
-    @apply border-green-300 shadow;
+    @apply border-[#3e3e3e] shadow-md;
   }
 
   .card-interactive {
@@ -125,28 +127,28 @@
   .textarea,
   .select {
     @apply w-full px-4 py-3 text-sm;
-    @apply bg-white/80 text-gray-900;
-    @apply border border-green-200 rounded-xl;
+    @apply bg-[#1a1a1a] text-gray-100;
+    @apply border border-[#282828] rounded-xl;
     @apply transition-all duration-150;
     @apply outline-none shadow-sm;
   }
 
   .input::placeholder,
   .textarea::placeholder {
-    @apply text-gray-400;
+    @apply text-gray-500;
   }
 
   .input:focus,
   .textarea:focus,
   .select:focus {
-    @apply border-amber-500 shadow-md;
-    box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1), 0 1px 3px 0 rgb(0 0 0 / 0.1);
+    @apply border-green-500 shadow-md;
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1), 0 1px 3px 0 rgb(0 0 0 / 0.3);
   }
 
   .input:hover,
   .textarea:hover,
   .select:hover {
-    @apply border-gray-300;
+    @apply border-[#3e3e3e];
   }
 
   .textarea {
@@ -227,20 +229,20 @@
   .nav-link {
     @apply flex items-center gap-3;
     @apply px-4 py-2.5 text-sm font-medium;
-    @apply text-gray-600 no-underline rounded-xl;
+    @apply text-gray-400 no-underline rounded-xl;
     @apply transition-all duration-150;
   }
 
   .nav-link:hover {
-    @apply bg-gray-100 text-gray-900;
+    @apply bg-[#282828] text-gray-100;
   }
 
   .nav-link-active {
-    @apply bg-amber-50 text-amber-700 font-semibold;
+    @apply bg-green-500/10 text-green-500 font-semibold;
   }
 
   .nav-link-active:hover {
-    @apply bg-amber-100;
+    @apply bg-green-500/20;
   }
 
   /* Loading */

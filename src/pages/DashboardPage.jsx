@@ -98,25 +98,25 @@ function DashboardPage() {
   const isLoading = isLoadingReferrals || isLoadingReminders;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50">
+    <div className="min-h-screen bg-[#121212]">
       <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 py-4 sm:py-6 lg:py-8">
         {/* Header */}
         <div className="mb-4 sm:mb-6 lg:mb-8">
-          <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-1 sm:mb-2">
+          <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-1 sm:mb-2">
             Dashboard
           </h1>
-          <p className="text-sm sm:text-base text-gray-600">
+          <p className="text-sm sm:text-base text-gray-400">
             Welcome back! Here's what needs your attention.
           </p>
         </div>
 
         {/* Quick Stats */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 lg:gap-4 mb-4 sm:mb-6 lg:mb-8">
-          <div className="bg-green-50/40 border border-green-200/60 rounded-xl p-3 sm:p-4 lg:p-5 shadow-sm hover:shadow-md transition-shadow">
+          <div className="bg-[#1a1a1a] border border-[#282828] rounded-xl p-3 sm:p-4 lg:p-5 shadow-sm hover:shadow-md hover:border-green-500/50 transition-all">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
               <div className="flex-1">
-                <p className="text-xs text-gray-600 mb-1">Active Referrals</p>
-                <p className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900">
+                <p className="text-xs text-gray-400 mb-1">Active Referrals</p>
+                <p className="text-lg sm:text-xl lg:text-2xl font-bold text-white">
                   {isLoading ? '-' : activeReferrals}
                 </p>
               </div>
@@ -124,11 +124,11 @@ function DashboardPage() {
             </div>
           </div>
 
-          <div className="bg-green-50/40 border border-green-200/60 rounded-xl p-3 sm:p-4 lg:p-5 shadow-sm hover:shadow-md transition-shadow">
+          <div className="bg-[#1a1a1a] border border-[#282828] rounded-xl p-3 sm:p-4 lg:p-5 shadow-sm hover:shadow-md hover:border-green-500/50 transition-all">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
               <div className="flex-1">
-                <p className="text-xs text-gray-600 mb-1">Pending Replies</p>
-                <p className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900">
+                <p className="text-xs text-gray-400 mb-1">Pending Replies</p>
+                <p className="text-lg sm:text-xl lg:text-2xl font-bold text-white">
                   {isLoading ? '-' : pendingConversations.length}
                 </p>
               </div>
@@ -136,11 +136,11 @@ function DashboardPage() {
             </div>
           </div>
 
-          <div className="bg-green-50/40 border border-green-200/60 rounded-xl p-3 sm:p-4 lg:p-5 shadow-sm hover:shadow-md transition-shadow">
+          <div className="bg-[#1a1a1a] border border-[#282828] rounded-xl p-3 sm:p-4 lg:p-5 shadow-sm hover:shadow-md hover:border-green-500/50 transition-all">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
               <div className="flex-1">
-                <p className="text-xs text-gray-600 mb-1">Due Today</p>
-                <p className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900">
+                <p className="text-xs text-gray-400 mb-1">Due Today</p>
+                <p className="text-lg sm:text-xl lg:text-2xl font-bold text-white">
                   {isLoading ? '-' : reminderStats?.dueToday || 0}
                 </p>
               </div>
@@ -148,11 +148,11 @@ function DashboardPage() {
             </div>
           </div>
 
-          <div className="bg-green-50/40 border border-green-200/60 rounded-xl p-3 sm:p-4 lg:p-5 shadow-sm hover:shadow-md transition-shadow">
+          <div className="bg-[#1a1a1a] border border-[#282828] rounded-xl p-3 sm:p-4 lg:p-5 shadow-sm hover:shadow-md hover:border-red-500/50 transition-all">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
               <div className="flex-1">
-                <p className="text-xs text-gray-600 mb-1">Overdue</p>
-                <p className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900">
+                <p className="text-xs text-gray-400 mb-1">Overdue</p>
+                <p className="text-lg sm:text-xl lg:text-2xl font-bold text-white">
                   {isLoading ? '-' : reminderStats?.overdue || 0}
                 </p>
               </div>
@@ -162,11 +162,11 @@ function DashboardPage() {
         </div>
 
         {/* Quick Actions */}
-        <div className="bg-gradient-to-r from-green-500 to-green-600 rounded-xl p-4 sm:p-5 lg:p-6 mb-4 sm:mb-6 lg:mb-8 shadow-lg">
+        <div className="bg-gradient-to-r from-green-600 to-green-700 rounded-2xl p-4 sm:p-5 lg:p-6 mb-4 sm:mb-6 lg:mb-8 shadow-lg shadow-green-500/20">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4">
             <div className="text-white">
               <h2 className="text-base sm:text-lg lg:text-xl font-semibold mb-1 sm:mb-2">Quick Actions</h2>
-              <p className="text-green-100 text-xs sm:text-sm">
+              <p className="text-green-50 text-xs sm:text-sm">
                 Jump right into your workflow
               </p>
             </div>
