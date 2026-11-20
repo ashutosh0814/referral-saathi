@@ -15,7 +15,7 @@
   }
 
   body {
-    @apply font-sans leading-normal text-[0.9375rem];
+    @apply font-sans leading-normal text-[0.9375rem] bg-gray-50 text-gray-900;
     letter-spacing: -0.01em;
   }
 

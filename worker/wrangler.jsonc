@@ -4,26 +4,24 @@
   "name": "referralsaathi-gemini-worker",
   "main": "src/index.js",
   "compatibility_date": "2024-01-01",
-  "compatibility_flags": ["nodejs_compat"],
-  
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
   // Environment variables (non-secret)
   "vars": {
     "FIREBASE_PROJECT_ID": "beep-4b926",
     "ALLOWED_ORIGIN": "http://localhost:3000",
     "GEMINI_MODEL": "gemini-1.5-flash"
   },
-
   // Secrets (set via: wrangler secret put GEMINI_API_KEY)
   // Do NOT commit secrets to version control
   // Secrets to configure:
   // - GEMINI_API_KEY: Your Google Gemini API key
-
   // Development configuration
   "dev": {
     "port": 8787,
     "local_protocol": "http"
   },
-
   // Production configuration (for when you deploy)
   // Update ALLOWED_ORIGIN to your production domain
   // Example:
