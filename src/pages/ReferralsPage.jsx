@@ -107,15 +107,15 @@ function ReferralsPage() {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[#121212]">
       <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 py-4 sm:py-6 lg:py-8">
         {/* Page Header */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4 mb-4 sm:mb-6 lg:mb-8">
           <div>
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-1 sm:mb-2 tracking-tight">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-1 sm:mb-2 tracking-tight">
               My Referrals
             </h1>
-            <p className="text-sm sm:text-base text-gray-600">
+            <p className="text-sm sm:text-base text-gray-200">
               Manage and track all your referral opportunities
             </p>
           </div>
@@ -159,8 +159,8 @@ function ReferralsPage() {
         ) : isLoading ? (
           // Loading State
           <div className="flex flex-col items-center justify-center py-12 sm:py-16 lg:py-20">
-            <Loader2 className="w-10 h-10 sm:w-12 sm:h-12 text-amber-600 animate-spin mb-3 sm:mb-4" />
-            <p className="text-sm sm:text-base text-gray-600">Loading your referrals...</p>
+            <Loader2 className="w-10 h-10 sm:w-12 sm:h-12 text-green-500 animate-spin mb-3 sm:mb-4" />
+            <p className="text-sm sm:text-base text-gray-200">Loading your referrals...</p>
           </div>
         ) : referrals.length > 0 ? (
           // Referrals Grid
@@ -222,19 +222,19 @@ function ReferralsPage() {
 
           {/* Modal */}
           <div className="flex min-h-full items-center justify-center p-3 sm:p-4">
-            <div className="relative bg-white rounded-lg shadow-xl w-full max-w-md p-4 sm:p-6">
+            <div className="relative bg-[#1a1a1a] border border-[#282828] rounded-lg shadow-xl w-full max-w-md p-4 sm:p-6">
               <div className="flex items-start gap-3 sm:gap-4 mb-4 sm:mb-6">
-                <div className="w-10 h-10 bg-red-50 rounded-full flex items-center justify-center flex-shrink-0">
-                  <AlertCircle className="w-5 h-5 text-red-600" />
+                <div className="w-10 h-10 bg-red-500/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <AlertCircle className="w-5 h-5 text-red-500" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-1">
+                  <h3 className="text-base sm:text-lg font-semibold text-white mb-1">
                     Delete Referral
                   </h3>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-gray-300">
                     Are you sure you want to delete the referral for{' '}
-                    <strong>{deleteConfirm.jobTitle}</strong> at{' '}
-                    <strong>{deleteConfirm.companyName}</strong>? This action cannot be undone.
+                    <strong className="text-white">{deleteConfirm.jobTitle}</strong> at{' '}
+                    <strong className="text-white">{deleteConfirm.companyName}</strong>? This action cannot be undone.
                   </p>
                 </div>
               </div>

@@ -41,27 +41,27 @@ export default function ProfileSettings({ user }) {
   const hasChanges = displayName !== (user?.displayName || '');
 
   return (
-    <div className="bg-green-50/40 rounded-lg shadow p-6">
-      <h2 className="text-lg font-semibold text-gray-900 mb-4">Profile Information</h2>
+    <div className="bg-[#1a1a1a] border border-[#282828] rounded-lg shadow p-6">
+      <h2 className="text-lg font-semibold text-white mb-4">Profile Information</h2>
 
       <form onSubmit={handleUpdateProfile} className="space-y-4">
         {/* Email (read-only) */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-gray-200 mb-1">
             <Mail className="inline w-4 h-4 mr-1" />
             Email Address
           </label>
-          <div className="px-3 py-2 bg-gray-50 border border-gray-200 rounded-md text-gray-600 text-sm">
+          <div className="px-3 py-2 bg-[#121212] border border-[#282828] rounded-md text-gray-300 text-sm">
             {user?.email || 'No email'}
           </div>
-          <p className="text-xs text-gray-500 mt-1">
+          <p className="text-xs text-gray-400 mt-1">
             Email cannot be changed
           </p>
         </div>
 
         {/* Display Name */}
         <div>
-          <label htmlFor="displayName" className="block text-sm font-medium text-gray-700 mb-1">
+          <label htmlFor="displayName" className="block text-sm font-medium text-gray-200 mb-1">
             <User className="inline w-4 h-4 mr-1" />
             Display Name
           </label>
@@ -70,11 +70,11 @@ export default function ProfileSettings({ user }) {
             id="displayName"
             value={displayName}
             onChange={(e) => setDisplayName(e.target.value)}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-3 py-2 bg-[#121212] border border-[#282828] text-white placeholder-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
             placeholder="Enter your display name"
             maxLength={50}
           />
-          <p className="text-xs text-gray-500 mt-1">
+          <p className="text-xs text-gray-400 mt-1">
             This is how your name will appear in the app
           </p>
         </div>
@@ -82,19 +82,19 @@ export default function ProfileSettings({ user }) {
         {/* Email Verification Status */}
         {user?.emailVerified !== undefined && (
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-gray-200 mb-1">
               Email Verification
             </label>
             <div className="flex items-center gap-2">
               {user.emailVerified ? (
                 <>
-                  <CheckCircle className="w-4 h-4 text-green-600" />
-                  <span className="text-sm text-green-600">Email verified</span>
+                  <CheckCircle className="w-4 h-4 text-green-500" />
+                  <span className="text-sm text-green-400">Email verified</span>
                 </>
               ) : (
                 <>
-                  <AlertCircle className="w-4 h-4 text-amber-600" />
-                  <span className="text-sm text-amber-600">Email not verified</span>
+                  <AlertCircle className="w-4 h-4 text-amber-500" />
+                  <span className="text-sm text-amber-400">Email not verified</span>
                 </>
               )}
             </div>
@@ -103,13 +103,13 @@ export default function ProfileSettings({ user }) {
 
         {/* Account ID (for support) */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-gray-200 mb-1">
             Account ID
           </label>
-          <div className="px-3 py-2 bg-gray-50 border border-gray-200 rounded-md text-gray-600 text-xs font-mono break-all">
+          <div className="px-3 py-2 bg-[#121212] border border-[#282828] rounded-md text-gray-300 text-xs font-mono break-all">
             {user?.uid || 'Unknown'}
           </div>
-          <p className="text-xs text-gray-500 mt-1">
+          <p className="text-xs text-gray-400 mt-1">
             Use this ID when contacting support
           </p>
         </div>
@@ -119,8 +119,8 @@ export default function ProfileSettings({ user }) {
           <div
             className={`flex items-start gap-2 p-3 rounded-md ${
               message.type === 'success'
-                ? 'bg-green-50 text-green-800'
-                : 'bg-red-50 text-red-800'
+                ? 'bg-green-500/10 text-green-400 border border-green-500/30'
+                : 'bg-red-500/10 text-red-400 border border-red-500/30'
             }`}
           >
             {message.type === 'success' ? (

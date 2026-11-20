@@ -20,7 +20,7 @@ function ReferralFilters({
   };
 
   return (
-    <div className="card p-3 sm:p-4 lg:p-5">
+    <div className="bg-[#1a1a1a] border border-[#282828] rounded-lg p-3 sm:p-4 lg:p-5">
       <div className="flex flex-col gap-3 sm:gap-4">
         {/* Search Input */}
         <div className="flex-1 relative">
@@ -30,12 +30,12 @@ function ReferralFilters({
             placeholder="Search company, job, or name..."
             value={searchQuery}
             onChange={(e) => onSearchChange(e.target.value)}
-            className="w-full pl-10 sm:pl-12 pr-9 sm:pr-10 py-2.5 sm:py-3 text-sm sm:text-base border border-green-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all"
+            className="w-full pl-10 sm:pl-12 pr-9 sm:pr-10 py-2.5 sm:py-3 text-sm sm:text-base bg-[#121212] border border-[#282828] text-white placeholder-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all"
           />
           {searchQuery && (
             <button
               onClick={handleClearSearch}
-              className="absolute right-3 top-1/2 -translate-y-1/2 p-1 text-gray-400 hover:text-gray-600 rounded-lg transition-colors"
+              className="absolute right-3 top-1/2 -translate-y-1/2 p-1 text-gray-400 hover:text-gray-200 rounded-lg transition-colors"
               aria-label="Clear search"
             >
               <X className="w-4 h-4" />
@@ -48,7 +48,7 @@ function ReferralFilters({
           <select
             value={statusFilter}
             onChange={(e) => onStatusFilterChange(e.target.value)}
-            className="w-full px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base border border-green-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all appearance-none bg-white cursor-pointer"
+            className="w-full px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base bg-[#121212] border border-[#282828] text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all appearance-none cursor-pointer"
           >
             <option value="all">All Status</option>
             {Object.entries(REFERRAL_STATUS).map(([key, value]) => (
@@ -73,9 +73,9 @@ function ReferralFilters({
       {/* Results Count */}
       {(searchQuery || statusFilter !== 'all') && (
         <div className="mt-2 sm:mt-3 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs sm:text-sm">
-          <p className="text-gray-600">
-            Showing <span className="font-semibold text-gray-900">{filteredCount}</span> of{' '}
-            <span className="font-semibold text-gray-900">{totalCount}</span> referrals
+          <p className="text-gray-300">
+            Showing <span className="font-semibold text-white">{filteredCount}</span> of{' '}
+            <span className="font-semibold text-white">{totalCount}</span> referrals
           </p>
           {(searchQuery || statusFilter !== 'all') && (
             <button
@@ -83,7 +83,7 @@ function ReferralFilters({
                 onSearchChange('');
                 onStatusFilterChange('all');
               }}
-              className="text-green-600 hover:text-green-700 font-medium transition-colors text-xs sm:text-sm"
+              className="text-green-500 hover:text-green-400 font-medium transition-colors text-xs sm:text-sm"
             >
               Clear filters
             </button>

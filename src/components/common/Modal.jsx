@@ -126,15 +126,15 @@ function Modal({
       <div className="flex min-h-full items-end sm:items-center justify-center p-0 sm:p-4">
         <div
           ref={modalRef}
-          className={`relative bg-white rounded-t-2xl sm:rounded-xl shadow-xl w-full max-h-[90vh] sm:max-h-[85vh] overflow-y-auto ${sizeClasses[size]} ${className} animate-slide-in-up`}
+          className={`relative bg-[#1a1a1a] border border-[#282828] rounded-t-2xl sm:rounded-xl shadow-xl w-full max-h-[90vh] sm:max-h-[85vh] overflow-y-auto ${sizeClasses[size]} ${className} animate-slide-in-up`}
           onClick={(e) => e.stopPropagation()}
         >
           {/* Header */}
-          <div className="sticky top-0 z-10 bg-white flex items-center justify-between p-4 sm:p-6 border-b border-gray-200">
-            <h2 id="modal-title" className="text-lg sm:text-xl font-semibold text-gray-900">{title}</h2>
+          <div className="sticky top-0 z-10 bg-[#1a1a1a] flex items-center justify-between p-4 sm:p-6 border-b border-[#282828]">
+            <h2 id="modal-title" className="text-lg sm:text-xl font-semibold text-white">{title}</h2>
             <button
               onClick={onClose}
-              className="text-gray-400 hover:text-gray-600 transition-colors p-1 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2"
+              className="text-gray-400 hover:text-gray-200 transition-colors p-1 rounded-lg hover:bg-[#282828] focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-[#1a1a1a]"
               aria-label="Close modal"
             >
               <X className="w-5 h-5" />
@@ -146,7 +146,7 @@ function Modal({
 
           {/* Footer */}
           {footer && (
-            <div className="sticky bottom-0 z-10 bg-gray-50 flex flex-col-reverse sm:flex-row items-stretch sm:items-center sm:justify-end gap-2 sm:gap-3 p-4 sm:p-6 border-t border-gray-200 rounded-b-xl">
+            <div className="sticky bottom-0 z-10 bg-[#121212] flex flex-col-reverse sm:flex-row items-stretch sm:items-center sm:justify-end gap-2 sm:gap-3 p-4 sm:p-6 border-t border-[#282828] rounded-b-xl">
               {footer}
             </div>
           )}

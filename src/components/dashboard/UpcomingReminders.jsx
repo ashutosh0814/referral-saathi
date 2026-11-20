@@ -43,12 +43,12 @@ function UpcomingReminders({ reminders, isLoading, onComplete }) {
 
   if (isLoading) {
     return (
-      <div className="bg-amber-50/40 border border-amber-200/60 rounded-lg p-6">
-        <h2 className="text-lg font-semibold text-gray-900 mb-4">Upcoming Reminders</h2>
+      <div className="bg-[#1a1a1a] border border-[#282828] rounded-lg p-6">
+        <h2 className="text-lg font-semibold text-white mb-4">Upcoming Reminders</h2>
         <div className="space-y-3">
           {[1, 2, 3].map((i) => (
             <div key={i} className="animate-pulse">
-              <div className="h-16 bg-gray-100 rounded-lg" />
+              <div className="h-16 bg-[#282828] rounded-lg" />
             </div>
           ))}
         </div>
@@ -58,12 +58,12 @@ function UpcomingReminders({ reminders, isLoading, onComplete }) {
 
   if (displayReminders.length === 0) {
     return (
-      <div className="bg-amber-50/40 border border-amber-200/60 rounded-lg p-6">
-        <h2 className="text-lg font-semibold text-gray-900 mb-4">Upcoming Reminders</h2>
+      <div className="bg-[#1a1a1a] border border-[#282828] rounded-lg p-6">
+        <h2 className="text-lg font-semibold text-white mb-4">Upcoming Reminders</h2>
         <div className="text-center py-8">
           <CheckCircle2 className="w-12 h-12 text-green-500 mx-auto mb-3" />
-          <p className="text-sm text-gray-600">All caught up!</p>
-          <p className="text-xs text-gray-500 mt-1">No pending reminders</p>
+          <p className="text-sm text-gray-200">All caught up!</p>
+          <p className="text-xs text-gray-300 mt-1">No pending reminders</p>
         </div>
       </div>
     );
@@ -74,27 +74,27 @@ function UpcomingReminders({ reminders, isLoading, onComplete }) {
 
     const configs = {
       overdue: {
-        bgColor: 'bg-red-50',
-        borderColor: 'border-red-200',
-        textColor: 'text-red-700',
+        bgColor: 'bg-red-500/10',
+        borderColor: 'border-red-500/30',
+        textColor: 'text-red-400',
         icon: AlertCircle,
-        iconColor: 'text-red-600',
+        iconColor: 'text-red-500',
         badgeVariant: 'error'
       },
       due_today: {
-        bgColor: 'bg-yellow-50',
-        borderColor: 'border-yellow-200',
-        textColor: 'text-yellow-700',
+        bgColor: 'bg-yellow-500/10',
+        borderColor: 'border-yellow-500/30',
+        textColor: 'text-yellow-400',
         icon: Clock,
-        iconColor: 'text-yellow-600',
+        iconColor: 'text-yellow-500',
         badgeVariant: 'warning'
       },
       upcoming: {
-        bgColor: 'bg-blue-50',
-        borderColor: 'border-blue-200',
-        textColor: 'text-blue-700',
+        bgColor: 'bg-blue-500/10',
+        borderColor: 'border-blue-500/30',
+        textColor: 'text-blue-400',
         icon: Bell,
-        iconColor: 'text-blue-600',
+        iconColor: 'text-blue-500',
         badgeVariant: 'default'
       }
     };
@@ -110,10 +110,10 @@ function UpcomingReminders({ reminders, isLoading, onComplete }) {
   };
 
   return (
-    <div className="bg-white border border-gray-200 rounded-lg p-6">
+    <div className="bg-[#1a1a1a] border border-[#282828] rounded-lg p-6">
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-2">
-          <h2 className="text-lg font-semibold text-gray-900">Upcoming Reminders</h2>
+          <h2 className="text-lg font-semibold text-white">Upcoming Reminders</h2>
           {overdueReminders.length > 0 && (
             <Badge variant="error">{overdueReminders.length} overdue</Badge>
           )}
@@ -152,7 +152,7 @@ function UpcomingReminders({ reminders, isLoading, onComplete }) {
 
               <div className="flex-1 min-w-0">
                 <div className="flex items-start justify-between gap-2 mb-1">
-                  <h3 className="text-sm font-semibold text-gray-900 line-clamp-1">
+                  <h3 className="text-sm font-semibold text-white line-clamp-1">
                     {reminder.title}
                   </h3>
                   <Button
@@ -169,12 +169,12 @@ function UpcomingReminders({ reminders, isLoading, onComplete }) {
                   <span className={config.textColor}>
                     {formatRelativeTime(reminder.dueDate)}
                   </span>
-                  <span className="text-gray-400">•</span>
-                  <span className="text-gray-600">{actionLabel}</span>
+                  <span className="text-gray-500">•</span>
+                  <span className="text-gray-300">{actionLabel}</span>
                   {reminder.referralCompany && (
                     <>
-                      <span className="text-gray-400">•</span>
-                      <span className="text-gray-600 truncate">
+                      <span className="text-gray-500">•</span>
+                      <span className="text-gray-300 truncate">
                         {reminder.referralCompany}
                       </span>
                     </>
