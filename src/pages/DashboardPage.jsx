@@ -20,7 +20,6 @@ import { getReferrals, getConversations } from '../lib/firestore';
 import { useAllReminders } from '../hooks/useReminders';
 import Button from '../components/common/Button';
 import Badge from '../components/common/Badge';
-import Modal from '../components/common/Modal';
 import ReferralForm from '../components/referrals/ReferralForm';
 import RecentReferrals from '../components/dashboard/RecentReferrals';
 import UpcomingReminders from '../components/dashboard/UpcomingReminders';
@@ -86,8 +85,13 @@ function DashboardPage() {
 
   // Handle add referral
   const handleAddReferral = async (referralData) => {
-    // This will be handled by ReferralForm
-    navigate('/referrals');
+    // Close modal and navigate to referrals page
+    // The actual creation will be handled by ReferralForm's onSubmit
+    setShowAddReferralModal(false);
+    // Optionally refresh the referrals list
+    setTimeout(() => {
+      window.location.reload(); // Simple way to refresh data
+    }, 500);
   };
 
   // Calculate stats
@@ -315,16 +319,13 @@ function DashboardPage() {
       </div>
 
       {/* Add Referral Modal */}
-      <Modal
+      <ReferralForm
         isOpen={showAddReferralModal}
         onClose={() => setShowAddReferralModal(false)}
-        title="Add New Referral"
-      >
-        <ReferralForm
-          onSubmit={handleAddReferral}
-          onCancel={() => setShowAddReferralModal(false)}
-        />
-      </Modal>
+        onSubmit={handleAddReferral}
+        initialData={null}
+        isLoading={false}
+      />
     </div>
   );
 }

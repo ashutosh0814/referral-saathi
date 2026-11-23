@@ -136,17 +136,17 @@ function AuthPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#121212] flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
-      <div className="w-full max-w-md my-8">
+    <div className="min-h-screen max-h-screen bg-[#121212] flex items-center justify-center p-4 sm:p-6 overflow-hidden">
+      <div className="w-full max-w-md max-h-[calc(100vh-2rem)] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-transparent">
         {/* Logo */}
-        <div className="text-center mb-6 sm:mb-8">
-          <div className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl shadow-lg shadow-green-500/20 mb-3 sm:mb-4">
-            <Sparkles className="w-7 h-7 sm:w-8 sm:h-8 text-white" />
+        <div className="text-center mb-4 sm:mb-6">
+          <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl shadow-lg shadow-green-500/20 mb-2 sm:mb-3">
+            <Sparkles className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
           </div>
-          <h1 className="text-2xl sm:text-3xl font-bold text-white mb-2 tracking-tight">
+          <h1 className="text-xl sm:text-2xl font-bold text-white mb-1 tracking-tight">
             ReferralSaathi
           </h1>
-          <p className="text-sm text-gray-400 font-medium">
+          <p className="text-xs sm:text-sm text-gray-400 font-medium">
             {mode === 'reset' 
               ? 'Reset your password' 
               : mode === 'register'
@@ -156,8 +156,7 @@ function AuthPage() {
         </div>
 
         {/* Auth Card */}
-        <div className="card p-5 sm:p-6 shadow-2xl border-[#282828]">
-          {/* Error Message */}
+        <div className="card p-4 sm:p-5 shadow-2xl border-[#282828] mb-4">{/* Error Message */}
           {error && (
             <div className="alert alert-error mb-6">
               <AlertCircle className="w-5 h-5 flex-shrink-0" />
@@ -180,7 +179,7 @@ function AuthPage() {
               <Button
                 type="button"
                 variant="secondary"
-                className="w-full mb-5"
+                className="w-full mb-4"
                 leftIcon={<Chrome />}
                 onClick={handleGoogleSignIn}
                 disabled={isSubmitting}
@@ -188,19 +187,19 @@ function AuthPage() {
                 Continue with Google
               </Button>
 
-              <div className="relative my-5 sm:my-6">
+              <div className="relative my-4 sm:my-5">
                 <div className="absolute inset-0 flex items-center">
                   <div className="w-full border-t border-[#282828]"></div>
                 </div>
                 <div className="relative flex justify-center text-sm">
-                  <span className="px-4 bg-[#121212] text-gray-400 font-medium">Or continue with email</span>
+                  <span className="px-4 bg-[#1a1a1a] text-gray-400 font-medium">Or continue with email</span>
                 </div>
               </div>
             </>
           )}
 
           {/* Auth Form */}
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
             {/* Display Name (Register only) */}
             {mode === 'register' && (
               <div>
@@ -327,7 +326,7 @@ function AuthPage() {
           </form>
 
           {/* Mode Switch */}
-          <div className="mt-5 sm:mt-6 text-center">
+          <div className="mt-4 sm:mt-5 text-center">
             {mode === 'reset' ? (
               <p className="text-sm text-gray-400">
                 Remember your password?{' '}
@@ -363,7 +362,7 @@ function AuthPage() {
         </div>
 
         {/* Footer Note */}
-        <p className="mt-5 sm:mt-6 mb-4 text-center text-xs text-gray-500 leading-relaxed px-4">
+        <p className="mt-3 sm:mt-4 mb-3 sm:mb-4 text-center text-xs text-gray-500 leading-relaxed px-4">
           By continuing, you agree to our Terms of Service and Privacy Policy
         </p>
       </div>
