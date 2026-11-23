@@ -185,7 +185,7 @@ function DashboardPage() {
                 type="button"
                 variant="secondary"
                 size="sm"
-                onClick={() => navigate('/referrals')}
+                onClick={() => navigate('/reply-assistant')}
                 leftIcon={<MessageSquare className="w-4 h-4" />}
                 className="w-full sm:w-auto text-sm"
               >
