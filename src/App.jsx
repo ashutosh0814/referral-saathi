@@ -16,6 +16,7 @@ import ReferralDetailPage from './pages/ReferralDetailPage';
 import RemindersPage from './pages/RemindersPage';
 import SettingsPage from './pages/SettingsPage';
 import ReplyAssistantPage from './pages/ReplyAssistantPage';
+import DocumentationPage from './pages/DocumentationPage';
 
 function App() {
   const { user } = useAuth();
@@ -42,6 +43,7 @@ function App() {
         <Route path="/referrals/:referralId" element={<ReferralDetailPage />} />
         <Route path="/reminders" element={<RemindersPage />} />
         <Route path="/reply-assistant" element={<ReplyAssistantPage />} />
+        <Route path="/documentation" element={<DocumentationPage />} />
         <Route path="/settings" element={<SettingsPage />} />
       </Route>
 

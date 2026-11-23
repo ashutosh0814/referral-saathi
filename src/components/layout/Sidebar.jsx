@@ -214,13 +214,19 @@ function Sidebar({ isOpen, onClose }) {
               <p className="text-sm text-gray-300 mb-3 leading-relaxed">
                 Check out our documentation and guides
               </p>
-              <a
-                href="#"
+              <NavLink
+                to="/documentation"
+                onClick={() => {
+                  // Close sidebar on mobile after navigation
+                  if (window.innerWidth < 1024) {
+                    onClose();
+                  }
+                }}
                 className="text-sm font-semibold text-green-500 hover:text-green-400 transition-colors inline-flex items-center gap-1 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-[#000000] rounded"
                 tabIndex={0}
               >
                 View Documentation →
-              </a>
+              </NavLink>
             </div>
           </div>
         </div>
